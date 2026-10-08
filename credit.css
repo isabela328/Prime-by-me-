@@ -1,0 +1,1586 @@
+/* =========================================================
+   CONFIGURACIÓN GENERAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #bd171c;
+
+    color: #4a2c23;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   COLORES PRINCIPALES
+========================================================= */
+
+:root {
+
+    --red: #c51d22;
+
+    --dark-red: #a7191e;
+
+    --yellow: #ffd21c;
+
+    --cream: #fff3c9;
+
+    --cream-light: #fff8dc;
+
+    --brown: #4a2c23;
+
+    --green: #18a85b;
+
+}
+
+
+/* =========================================================
+   BARRA PRINCIPAL
+========================================================= */
+
+.main-navbar {
+
+    width: calc(100% - 52px);
+
+    height: 100px;
+
+    margin: 18px auto 0;
+
+    background: #c52529;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 38px;
+
+    box-shadow:
+        0 8px 20px rgba(40, 60, 100, 0.18);
+
+    position: relative;
+
+    z-index: 10;
+
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.main-logo {
+
+    color: white;
+
+    font-size: 42px;
+
+    font-weight: 800;
+
+    letter-spacing: -2px;
+
+    flex-shrink: 0;
+
+}
+
+.main-logo span {
+
+    color: var(--yellow);
+
+}
+
+
+/* =========================================================
+   MENÚ
+========================================================= */
+
+.main-navbar nav {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 28px;
+
+}
+
+.main-navbar nav a {
+
+    background: var(--yellow);
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-size: 20px;
+
+    padding: 12px 27px;
+
+    border-radius: 30px;
+
+    white-space: nowrap;
+
+    transition: 0.25s;
+
+}
+
+.main-navbar nav a:hover {
+
+    background: white;
+
+    transform: translateY(-2px);
+
+}
+
+.main-navbar nav a.active {
+
+    background: #ffca20;
+
+}
+
+
+/* =========================================================
+   BARRA SECUNDARIA
+========================================================= */
+
+.secondary-bar {
+
+    height: 104px;
+
+    margin-top: 64px;
+
+    background: #a9181d;
+
+    border-bottom: 3px solid var(--yellow);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    padding: 0 55px;
+
+}
+
+.secondary-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+}
+
+
+/* =========================================================
+   BOTONES SECUNDARIOS
+========================================================= */
+
+.action-button {
+
+    height: 55px;
+
+    min-width: 62px;
+
+    background: white;
+
+    border: 3px solid var(--yellow);
+
+    border-radius: 15px;
+
+    font-size: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    cursor: pointer;
+
+    position: relative;
+
+}
+
+.language-button {
+
+    min-width: 98px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+}
+
+.notification-button {
+
+    width: 64px;
+
+}
+
+.notification-number {
+
+    position: absolute;
+
+    right: -8px;
+
+    top: -9px;
+
+    width: 27px;
+
+    height: 27px;
+
+    border-radius: 50%;
+
+    background: #ff9f00;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+/* =========================================================
+   CONTENEDOR PRINCIPAL
+========================================================= */
+
+.credit-page {
+
+    background: var(--red);
+
+    padding: 70px 65px 100px;
+
+    min-height: calc(100vh - 286px);
+
+}
+
+
+/* =========================================================
+   ENCABEZADO
+========================================================= */
+
+.credit-header {
+
+    margin-bottom: 45px;
+
+}
+
+.credit-header h1 {
+
+    color: white;
+
+    font-size: 58px;
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    margin-bottom: 25px;
+
+}
+
+.credit-header h1 span {
+
+    color: var(--yellow);
+
+}
+
+.credit-header p {
+
+    color: #ffe9c7;
+
+    font-size: 24px;
+
+    font-weight: 500;
+
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.dashboard-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(280px, 1fr)
+        minmax(420px, 1.18fr)
+        minmax(320px, 1fr);
+
+    gap: 35px;
+
+    align-items: start;
+
+}
+
+
+/* =========================================================
+   COLUMNAS
+========================================================= */
+
+.left-column,
+.center-column,
+.right-column {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 35px;
+
+}
+
+
+/* =========================================================
+   PANELES
+========================================================= */
+
+.panel {
+
+    background: var(--cream);
+
+    border: 3px solid #ffb51b;
+
+    border-radius: 23px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 3px 0 rgba(140, 45, 20, 0.08);
+
+}
+
+
+/* =========================================================
+   SELECTOR DE CLIENTE
+========================================================= */
+
+.customer-selector h2 {
+
+    font-size: 22px;
+
+    margin-bottom: 25px;
+
+}
+
+.customer-select {
+
+    height: 80px;
+
+    background: white;
+
+    border: 3px solid #ffb52a;
+
+    border-radius: 17px;
+
+    padding: 0 27px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    font-size: 22px;
+
+}
+
+.customer-select span {
+
+    font-size: 27px;
+
+}
+
+
+/* =========================================================
+   TARJETA DEL CLIENTE
+========================================================= */
+
+.customer-card {
+
+    padding: 35px 38px;
+
+}
+
+.customer-title {
+
+    font-size: 31px;
+
+    margin-bottom: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+.customer-icon {
+
+    width: 33px;
+
+    height: 33px;
+
+    background: #c51d22;
+
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================================
+   ESTADÍSTICAS
+========================================================= */
+
+.customer-stats {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 22px;
+
+}
+
+.stat-box {
+
+    background: white;
+
+    border: 1px solid #ffb52a;
+
+    border-radius: 17px;
+
+    padding: 28px 22px;
+
+    min-height: 125px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+}
+
+.stat-box span {
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+}
+
+.stat-box strong {
+
+    font-size: 31px;
+
+}
+
+.red-text {
+
+    color: var(--red);
+
+}
+
+
+/* =========================================================
+   BARRA DE PROGRESO
+========================================================= */
+
+.credit-progress {
+
+    margin-top: 30px;
+
+}
+
+.progress-bar {
+
+    width: 100%;
+
+    height: 15px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+.progress-value {
+
+    width: 35%;
+
+    height: 100%;
+
+    background: var(--red);
+
+    border-radius: 20px;
+
+}
+
+.progress-info {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 15px;
+
+    font-size: 17px;
+
+}
+
+
+/* =========================================================
+   BLOQUEO AUTOMÁTICO
+========================================================= */
+
+.automatic-block {
+
+    min-height: 145px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+}
+
+.block-content h2 {
+
+    font-size: 22px;
+
+    margin-bottom: 12px;
+
+}
+
+.block-content p {
+
+    font-size: 17px;
+
+    line-height: 1.4;
+
+}
+
+
+/* =========================================================
+   SWITCH
+========================================================= */
+
+.switch {
+
+    position: relative;
+
+    width: 70px;
+
+    height: 38px;
+
+    flex-shrink: 0;
+
+}
+
+.switch input {
+
+    opacity: 0;
+
+    width: 0;
+
+    height: 0;
+
+}
+
+.slider {
+
+    position: absolute;
+
+    cursor: pointer;
+
+    inset: 0;
+
+    background: #ddd;
+
+    border-radius: 30px;
+
+    transition: 0.3s;
+
+}
+
+.slider:before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 30px;
+
+    height: 30px;
+
+    left: 4px;
+
+    top: 4px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    transition: 0.3s;
+
+}
+
+.switch input:checked + .slider {
+
+    background: var(--red);
+
+}
+
+.switch input:checked + .slider:before {
+
+    transform: translateX(32px);
+
+}
+
+
+/* =========================================================
+   HISTORIAL
+========================================================= */
+
+.debt-history {
+
+    padding: 40px;
+
+}
+
+.debt-history h2,
+.register-payment h2,
+.recent-activity h2,
+.debt-overview h2 {
+
+    font-size: 29px;
+
+    margin-bottom: 12px;
+
+}
+
+.panel-description {
+
+    font-size: 18px;
+
+    margin-bottom: 25px;
+
+    color: #75432b;
+
+}
+
+
+/* =========================================================
+   LISTA HISTORIAL
+========================================================= */
+
+.history-list {
+
+    background: transparent;
+
+    max-height: 405px;
+
+    overflow-y: auto;
+
+    padding-right: 5px;
+
+}
+
+
+/* SCROLLBAR */
+
+.history-list::-webkit-scrollbar {
+
+    width: 12px;
+
+}
+
+.history-list::-webkit-scrollbar-track {
+
+    background: #eee;
+
+}
+
+.history-list::-webkit-scrollbar-thumb {
+
+    background: #999;
+
+    border-radius: 10px;
+
+}
+
+
+/* =========================================================
+   ITEM HISTORIAL
+========================================================= */
+
+.history-item {
+
+    min-height: 92px;
+
+    background: white;
+
+    border: 1px solid #ffb52a;
+
+    border-radius: 17px;
+
+    margin-bottom: 18px;
+
+    padding: 15px 18px;
+
+    display: grid;
+
+    grid-template-columns:
+        65px
+        55px
+        1fr
+        auto
+        auto;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+/* FECHA */
+
+.date-box {
+
+    width: 55px;
+
+    height: 57px;
+
+    border: 1px solid #ffb52a;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+.date-box strong {
+
+    font-size: 21px;
+
+}
+
+.date-box span {
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+}
+
+
+/* ICONO */
+
+.history-icon {
+
+    width: 50px;
+
+    height: 50px;
+
+    border-radius: 50%;
+
+    background: #fff2c4;
+
+    border: 1px solid #ffb52a;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 23px;
+
+}
+
+.history-icon.payment {
+
+    color: var(--green);
+
+}
+
+
+/* PRODUCTO */
+
+.history-product {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+.history-product strong {
+
+    font-size: 20px;
+
+}
+
+.history-product span {
+
+    font-size: 17px;
+
+}
+
+
+/* CANTIDAD */
+
+.history-amount {
+
+    color: var(--red);
+
+    font-size: 22px;
+
+    white-space: nowrap;
+
+}
+
+.payment-amount {
+
+    color: var(--green);
+
+    font-size: 21px;
+
+    white-space: nowrap;
+
+}
+
+
+/* ESTADOS */
+
+.pending,
+.paid {
+
+    padding: 8px 12px;
+
+    border-radius: 9px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+
+}
+
+.pending {
+
+    background: #fff08b;
+
+    color: #76510a;
+
+}
+
+.paid {
+
+    background: #d4f7e2;
+
+    color: #149450;
+
+}
+
+
+/* LINK */
+
+.view-history,
+.view-activity {
+
+    display: inline-block;
+
+    color: var(--red);
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+    margin-top: 10px;
+
+}
+
+.view-history:hover,
+.view-activity:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* =========================================================
+   REGISTRAR PAGO
+========================================================= */
+
+.register-payment {
+
+    padding: 38px;
+
+}
+
+.register-payment > label {
+
+    display: block;
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+    margin-bottom: 12px;
+
+}
+
+.payment-input {
+
+    height: 75px;
+
+    background: white;
+
+    border: 3px solid #ffb52a;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 25px;
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    color: #777;
+
+    margin-bottom: 28px;
+
+}
+
+
+/* =========================================================
+   TIPO DE PAGO
+========================================================= */
+
+.payment-types {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+
+    margin-bottom: 30px;
+
+}
+
+.payment-option {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+}
+
+.payment-option input {
+
+    width: 20px;
+
+    height: 20px;
+
+    accent-color: #168cf0;
+
+}
+
+
+/* =========================================================
+   BOTONES DE PAGO
+========================================================= */
+
+.payment-buttons {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+
+}
+
+.payment-buttons button {
+
+    height: 75px;
+
+    border-radius: 14px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+.register-button {
+
+    background: #ffb72b;
+
+    border: 2px solid #e9a00e;
+
+    color: #3d2b22;
+
+}
+
+.register-button:hover {
+
+    background: #ffc53f;
+
+}
+
+.paid-button {
+
+    background: white;
+
+    border: 3px solid #ffb52a;
+
+    color: #4a2c23;
+
+}
+
+.paid-button:hover {
+
+    background: #fff9e8;
+
+}
+
+
+/* =========================================================
+   ACTIVIDAD RECIENTE
+========================================================= */
+
+.recent-activity {
+
+    padding: 38px;
+
+}
+
+.activity-list {
+
+    margin-top: 15px;
+
+}
+
+.activity-item {
+
+    min-height: 95px;
+
+    display: grid;
+
+    grid-template-columns:
+        55px
+        1fr
+        auto;
+
+    align-items: center;
+
+    gap: 15px;
+
+    border-bottom: 1px solid #e1c99c;
+
+}
+
+.activity-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 50%;
+
+    border: 1px solid #ffb52a;
+
+    background: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 20px;
+
+}
+
+.activity-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+}
+
+.activity-info strong {
+
+    font-size: 19px;
+
+}
+
+.activity-info span {
+
+    font-size: 17px;
+
+    color: #75432b;
+
+}
+
+.activity-time {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 16px;
+
+}
+
+.green-dot,
+.yellow-dot {
+
+    width: 12px;
+
+    height: 12px;
+
+    border-radius: 50%;
+
+}
+
+.green-dot {
+
+    background: #18aa5d;
+
+}
+
+.yellow-dot {
+
+    background: #d79500;
+
+}
+
+
+/* =========================================================
+   RESUMEN DEUDA
+========================================================= */
+
+.debt-overview {
+
+    padding: 38px;
+
+}
+
+.overview-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+
+    margin-top: 25px;
+
+}
+
+.overview-box {
+
+    background: white;
+
+    border: 1px solid #ffb52a;
+
+    border-radius: 15px;
+
+    min-height: 105px;
+
+    padding: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+}
+
+.overview-box span {
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+}
+
+.overview-box strong {
+
+    font-size: 28px;
+
+    color: var(--red);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1400px) {
+
+    .main-navbar {
+
+        width: calc(100% - 40px);
+
+        padding: 0 30px;
+
+    }
+
+    .main-navbar nav {
+
+        gap: 16px;
+
+    }
+
+    .main-navbar nav a {
+
+        font-size: 17px;
+
+        padding: 10px 19px;
+
+    }
+
+    .dashboard-grid {
+
+        grid-template-columns:
+            1fr
+            1.2fr
+            1fr;
+
+        gap: 20px;
+
+    }
+
+    .credit-page {
+
+        padding-left: 30px;
+
+        padding-right: 30px;
+
+    }
+
+}
+
+
+@media (max-width: 1100px) {
+
+    .main-navbar {
+
+        height: 90px;
+
+    }
+
+    .main-logo {
+
+        font-size: 36px;
+
+    }
+
+    .main-navbar nav {
+
+        gap: 9px;
+
+    }
+
+    .main-navbar nav a {
+
+        font-size: 14px;
+
+        padding: 8px 13px;
+
+    }
+
+    .credit-header h1 {
+
+        font-size: 48px;
+
+    }
+
+    .credit-header p {
+
+        font-size: 20px;
+
+    }
+
+    .dashboard-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+    .right-column {
+
+        grid-column: span 2;
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .main-navbar {
+
+        width: calc(100% - 20px);
+
+        height: auto;
+
+        padding: 18px;
+
+        flex-direction: column;
+
+        gap: 18px;
+
+    }
+
+    .main-navbar nav {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+    }
+
+    .secondary-bar {
+
+        margin-top: 30px;
+
+        height: 80px;
+
+        padding: 0 20px;
+
+    }
+
+    .credit-page {
+
+        padding: 45px 15px;
+
+    }
+
+    .credit-header h1 {
+
+        font-size: 40px;
+
+    }
+
+    .credit-header p {
+
+        font-size: 17px;
+
+    }
+
+    .dashboard-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .right-column {
+
+        grid-column: auto;
+
+        display: flex;
+
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .main-logo {
+
+        font-size: 32px;
+
+    }
+
+    .main-navbar nav {
+
+        gap: 6px;
+
+    }
+
+    .main-navbar nav a {
+
+        font-size: 12px;
+
+        padding: 7px 10px;
+
+    }
+
+    .secondary-actions {
+
+        gap: 8px;
+
+    }
+
+    .action-button {
+
+        height: 48px;
+
+        min-width: 52px;
+
+    }
+
+    .credit-header h1 {
+
+        font-size: 34px;
+
+    }
+
+    .panel {
+
+        padding: 22px;
+
+    }
+
+    .customer-stats {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .history-item {
+
+        grid-template-columns:
+            55px
+            45px
+            1fr;
+
+        gap: 10px;
+
+    }
+
+    .history-amount {
+
+        grid-column: 3;
+
+    }
+
+    .pending,
+    .paid {
+
+        grid-column: 3;
+
+        justify-self: start;
+
+    }
+
+    .payment-buttons {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .overview-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .activity-item {
+
+        grid-template-columns:
+            45px
+            1fr;
+
+        padding: 15px 0;
+
+    }
+
+    .activity-time {
+
+        grid-column: 2;
+
+    }
+
+}

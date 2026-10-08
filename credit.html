@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>FIA'O - Credit</title>
+
+    <link rel="stylesheet"
+          href="credit.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         BARRA PRINCIPAL
+    ====================================================== -->
+
+    <header class="main-navbar">
+
+        <div class="main-logo">
+            FIA<span>'O</span>
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+             <a href="product.html">
+                Products
+            </a>
+
+            <a href="credit.html" class="active">
+                Credit
+            </a>
+
+            <a href="#">
+                Products
+            </a>
+
+            <a href="#">
+                Clients
+            </a>
+
+            <a href="#">
+                Reports
+            </a>
+
+            <a href="#">
+                Contact
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         BARRA SECUNDARIA
+    ====================================================== -->
+
+    <section class="secondary-bar">
+
+        <div class="secondary-actions">
+
+            <button class="action-button notification-button">
+
+                🔔
+
+                <span class="notification-number">
+                    3
+                </span>
+
+            </button>
+
+
+            <button class="action-button language-button">
+
+                🌐
+
+                <span>
+                    ES
+                </span>
+
+            </button>
+
+
+            <button class="action-button">
+
+                🌙
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+    ====================================================== -->
+
+    <main class="credit-page">
+
+
+        <!-- =================================================
+             ENCABEZADO
+        ================================================== -->
+
+        <section class="credit-header">
+
+            <h1>
+                Debts <span>&amp;</span> Payments
+            </h1>
+
+            <p>
+                Manage customer debts, register payments, and
+                track balances easily.
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             GRID PRINCIPAL
+        ================================================== -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- =================================================
+                 COLUMNA IZQUIERDA
+            ================================================== -->
+
+            <div class="left-column">
+
+
+                <!-- SELECTOR CLIENTE -->
+
+                <div class="panel customer-selector">
+
+                    <h2>
+                        👤
+                        Select a Customer
+                    </h2>
+
+
+                    <div class="customer-select">
+
+                        <strong>
+                            Ramón Batista
+                        </strong>
+
+                        <span>
+                           ⌄
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- INFORMACIÓN DEL CLIENTE -->
+
+                <div class="panel customer-card">
+
+                    <h2 class="customer-title">
+
+                        <span class="customer-icon">
+                            ●
+                        </span>
+
+                        Ramón Batista
+
+                    </h2>
+
+
+                    <div class="customer-stats">
+
+
+                        <div class="stat-box">
+
+                            <span>
+                                Current Debt
+                            </span>
+
+                            <strong class="red-text">
+                                B/. 35.00
+                            </strong>
+
+                        </div>
+
+
+                        <div class="stat-box">
+
+                            <span>
+                                Credit Limit
+                            </span>
+
+                            <strong>
+                                B/. 100.00
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- BARRA DE CRÉDITO -->
+
+                    <div class="credit-progress">
+
+                        <div class="progress-bar">
+
+                            <div class="progress-value"></div>
+
+                        </div>
+
+
+                        <div class="progress-info">
+
+                            <strong>
+                                35% used
+                            </strong>
+
+                            <strong>
+                                Limit: B/. 100.00
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- BLOQUEO AUTOMÁTICO -->
+
+                <div class="panel automatic-block">
+
+                    <div class="block-content">
+
+                        <h2>
+                            🛡 Automatic Blocking
+                        </h2>
+
+                        <p>
+                            If a customer exceeds the debt limit,
+                            system prevents new credits.
+                        </p>
+
+                    </div>
+
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            checked
+                        >
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 COLUMNA CENTRAL
+            ================================================== -->
+
+            <div class="center-column">
+
+
+                <!-- HISTORIAL -->
+
+                <div class="panel debt-history">
+
+                    <h2>
+                        Debt History
+                    </h2>
+
+                    <p class="panel-description">
+                        Track all purchases and payments.
+                    </p>
+
+
+                    <div class="history-list">
+
+
+                        <!-- ITEM 1 -->
+
+                        <div class="history-item">
+
+
+                            <div class="date-box">
+
+                                <strong>
+                                    14
+                                </strong>
+
+                                <span>
+                                    JUL
+                                </span>
+
+                            </div>
+
+
+                            <div class="history-icon">
+                                🛒
+                            </div>
+
+
+                            <div class="history-product">
+
+                                <strong>
+                                    Milk (2)
+                                </strong>
+
+                                <span>
+                                    Fiado
+                                </span>
+
+                            </div>
+
+
+                            <strong class="history-amount">
+                                B/. 8.00
+                            </strong>
+
+
+                            <span class="pending">
+                                Pending
+                            </span>
+
+                        </div>
+
+
+
+                        <!-- ITEM 2 -->
+
+                        <div class="history-item">
+
+
+                            <div class="date-box">
+
+                                <strong>
+                                    09
+                                </strong>
+
+                                <span>
+                                    JUL
+                                </span>
+
+                            </div>
+
+
+                            <div class="history-icon">
+                                🛒
+                            </div>
+
+
+                            <div class="history-product">
+
+                                <strong>
+                                    Detergent
+                                </strong>
+
+                                <span>
+                                    Fiado
+                                </span>
+
+                            </div>
+
+
+                            <strong class="history-amount">
+                                B/. 4.50
+                            </strong>
+
+
+                            <span class="pending">
+                                Pending
+                            </span>
+
+                        </div>
+
+
+
+                        <!-- ITEM 3 -->
+
+                        <div class="history-item">
+
+
+                            <div class="date-box">
+
+                                <strong>
+                                    05
+                                </strong>
+
+                                <span>
+                                    JUL
+                                </span>
+
+                            </div>
+
+
+                            <div class="history-icon payment">
+                                💵
+                            </div>
+
+
+                            <div class="history-product">
+
+                                <strong>
+                                    Payment Received
+                                </strong>
+
+                                <span>
+                                    Abono
+                                </span>
+
+                            </div>
+
+
+                            <strong class="payment-amount">
+                                −B/. 20.00
+                            </strong>
+
+
+                            <span class="paid">
+                                Paid
+                            </span>
+
+                        </div>
+
+
+
+                        <!-- ITEM 4 -->
+
+                        <div class="history-item">
+
+
+                            <div class="date-box">
+
+                                <strong>
+                                    01
+                                </strong>
+
+                                <span>
+                                    JUL
+                                </span>
+
+                            </div>
+
+
+                            <div class="history-icon">
+                                🛒
+                            </div>
+
+
+                            <div class="history-product">
+
+                                <strong>
+                                    Groceries Pack
+                                </strong>
+
+                                <span>
+                                    Fiado
+                                </span>
+
+                            </div>
+
+
+                            <strong class="history-amount">
+                                B/. 10.00
+                            </strong>
+
+
+                            <span class="pending">
+                                Pending
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="#" class="view-history">
+                        View Full History →
+                    </a>
+
+                </div>
+
+
+
+                <!-- REGISTRAR PAGO -->
+
+                <div class="panel register-payment">
+
+                    <h2>
+                        Register Payment
+                    </h2>
+
+                    <p class="panel-description">
+                        Record payments made by the customer.
+                    </p>
+
+
+                    <label>
+                        Payment Amount
+                    </label>
+
+
+                    <div class="payment-input">
+
+                        B/. 0.00
+
+                    </div>
+
+
+                    <label>
+                        Payment Type
+                    </label>
+
+
+                    <div class="payment-types">
+
+
+                        <label class="payment-option">
+
+                            <input
+                                type="radio"
+                                name="payment"
+                                checked
+                            >
+
+                            <span>
+                                Partial Payment
+                            </span>
+
+                        </label>
+
+
+                        <label class="payment-option">
+
+                            <input
+                                type="radio"
+                                name="payment"
+                            >
+
+                            <span>
+                                Full Payment
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="payment-buttons">
+
+                        <button class="register-button">
+                            Register Payment
+                        </button>
+
+                        <button class="paid-button">
+                            Mark as Paid
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 COLUMNA DERECHA
+            ================================================== -->
+
+            <div class="right-column">
+
+
+                <!-- ACTIVIDAD RECIENTE -->
+
+                <div class="panel recent-activity">
+
+                    <h2>
+                        Recent Activity
+                    </h2>
+
+
+                    <div class="activity-list">
+
+
+                        <!-- ACTIVIDAD 1 -->
+
+                        <div class="activity-item">
+
+                            <div class="activity-icon">
+                                💳
+                            </div>
+
+                            <div class="activity-info">
+
+                                <strong>
+                                    Ramón Batista
+                                </strong>
+
+                                <span>
+                                    Paid B/. 15.00
+                                </span>
+
+                            </div>
+
+                            <div class="activity-time">
+
+                                <strong>
+                                    Today
+                                </strong>
+
+                                <span class="green-dot"></span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ACTIVIDAD 2 -->
+
+                        <div class="activity-item">
+
+                            <div class="activity-icon">
+                                🛒
+                            </div>
+
+                            <div class="activity-info">
+
+                                <strong>
+                                    Carlos Gómez
+                                </strong>
+
+                                <span>
+                                    New debt: B/. 12.50
+                                </span>
+
+                            </div>
+
+                            <div class="activity-time">
+
+                                <strong>
+                                    Yesterday
+                                </strong>
+
+                                <span class="yellow-dot"></span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ACTIVIDAD 3 -->
+
+                        <div class="activity-item">
+
+                            <div class="activity-icon">
+                                💵
+                            </div>
+
+                            <div class="activity-info">
+
+                                <strong>
+                                    Ana Martínez
+                                </strong>
+
+                                <span>
+                                    Payment received: B/. 20.00
+                                </span>
+
+                            </div>
+
+                            <div class="activity-time">
+
+                                <strong>
+                                    Yesterday
+                                </strong>
+
+                                <span class="green-dot"></span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="#" class="view-activity">
+                        View all activity →
+                    </a>
+
+                </div>
+
+
+
+                <!-- RESUMEN -->
+
+                <div class="panel debt-overview">
+
+                    <h2>
+                        Debt Overview
+                    </h2>
+
+
+                    <div class="overview-grid">
+
+
+                        <div class="overview-box">
+
+                            <span>
+                                Outstanding Debt
+                            </span>
+
+                            <strong>
+                                B/. 480.00
+                            </strong>
+
+                        </div>
+
+
+                        <div class="overview-box">
+
+                            <span>
+                                Payments Today
+                            </span>
+
+                            <strong>
+                                B/. 150.00
+                            </strong>
+
+                        </div>
+
+
+                        <div class="overview-box">
+
+                            <span>
+                                Customers with Debt
+                            </span>
+
+                            <strong>
+                                18
+                            </strong>
+
+                        </div>
+
+
+                        <div class="overview-box">
+
+                            <span>
+                                Overdue
+                            </span>
+
+                            <strong>
+                                4
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+</body>
+
+</html>
