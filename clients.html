@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clients | FIA'O</title>
+    <link rel="stylesheet" href="clients.css">
+</head>
+<body>
+    <header class="navbar">
+        <a class="logo" href="index.html">FIA<span>'O</span></a>
+        <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="credit.html">Credit</a>
+            <a href="product.html">Products</a>
+            <a class="active" href="clients.html">Clients</a>
+            <a href="reports.html">Reports</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="clients-page">
+        <section class="intro">
+            <div class="intro-heading">
+                <div>
+                    <p class="eyebrow">CUSTOMER MANAGEMENT</p>
+                    <h1>Our Clients</h1>
+                    <p>Manage customer information, review outstanding balances, and keep track of payment status in one place.</p>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1000&q=80"
+                     alt="Team working together">
+            </div>
+            <div class="stats">
+                <div class="stat-card">
+                    <span>Total clients</span>
+                    <strong id="totalClients">4</strong>
+                </div>
+                <div class="stat-card">
+                    <span>Pending payments</span>
+                    <strong id="pendingClients">2</strong>
+                </div>
+            </div>
+            <button class="add-client-btn" id="openModal" type="button">+ Add New Client</button>
+        </section>
+
+        <section class="client-content" aria-label="Client list">
+            <div class="section-title">
+                <div>
+                    <p class="eyebrow">YOUR CUSTOMER LIST</p>
+                    <h2>Client Directory</h2>
+                </div>
+                <span class="client-count" id="resultCount">4 clients</span>
+            </div>
+
+            <div class="search-panel">
+                <label class="search-box">
+                    <span aria-hidden="true">⌕</span>
+                    <input id="searchInput" type="search" placeholder="Search by name, email or phone..." aria-label="Search clients">
+                </label>
+                <div class="filters" aria-label="Filter clients">
+                    <button class="filter-btn selected" type="button" data-filter="all">All clients</button>
+                    <button class="filter-btn" type="button" data-filter="ontime">On time</button>
+                    <button class="filter-btn" type="button" data-filter="pending">Pending</button>
+                    <button class="filter-btn" type="button" data-filter="overdue">Overdue</button>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Client</th>
+                            <th>Phone</th>
+                            <th>Balance</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="clientTableBody">
+                        <tr data-status="ontime">
+                            <td><div class="client-name"><span class="avatar">AM</span><div><strong>Ana Martínez</strong><small>ana@example.com</small></div></div></td>
+                            <td>6000-1234</td><td class="debt">$0.00</td><td><span class="status ontime">On time</span></td><td><button class="view-btn" type="button">View</button></td>
+                        </tr>
+                        <tr data-status="pending">
+                            <td><div class="client-name"><span class="avatar">CR</span><div><strong>Carlos Rodríguez</strong><small>carlos@example.com</small></div></div></td>
+                            <td>6123-4567</td><td class="debt">$85.00</td><td><span class="status pending">Pending</span></td><td><button class="view-btn" type="button">View</button></td>
+                        </tr>
+                        <tr data-status="overdue">
+                            <td><div class="client-name"><span class="avatar">LM</span><div><strong>Laura Méndez</strong><small>laura@example.com</small></div></div></td>
+                            <td>6999-3210</td><td class="debt">$120.00</td><td><span class="status overdue">Overdue</span></td><td><button class="view-btn" type="button">View</button></td>
+                        </tr>
+                        <tr data-status="pending">
+                            <td><div class="client-name"><span class="avatar">JP</span><div><strong>José Pérez</strong><small>jose@example.com</small></div></div></td>
+                            <td>6777-8899</td><td class="debt">$45.00</td><td><span class="status pending">Pending</span></td><td><button class="view-btn" type="button">View</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="empty-message" id="emptyMessage" hidden>No clients match your search.</p>
+            </div>
+
+            <aside class="reminder">
+                <div class="reminder-icon" aria-hidden="true">✉</div>
+                <div class="reminder-text">
+                    <h3>Payment reminders</h3>
+                    <p>Contact customers with outstanding balances to remind them about their payments.</p>
+                </div>
+                <button id="sendReminder" type="button">View pending</button>
+            </aside>
+        </section>
+    </main>
+
+    <div class="modal" id="clientModal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="close-modal" id="closeModal" type="button" aria-label="Close">×</button>
+            <h2 id="modalTitle">Add a client</h2>
+            <p>Enter the new client's contact information below.</p>
+            <form id="clientForm">
+                <label for="clientName">Full name</label>
+                <input id="clientName" name="clientName" required placeholder="e.g. María López">
+                <label for="clientEmail">Email</label>
+                <input id="clientEmail" name="clientEmail" type="email" required placeholder="name@example.com">
+                <label for="clientPhone">Phone</label>
+                <input id="clientPhone" name="clientPhone" required placeholder="e.g. 6000-1234">
+                <label for="clientBalance">Balance ($)</label>
+                <input id="clientBalance" name="clientBalance" type="number" min="0" step="0.01" value="0" required>
+                <button class="submit-btn" type="submit">Save client</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const tableBody = document.getElementById('clientTableBody');
+        const searchInput = document.getElementById('searchInput');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        let currentFilter = 'all';
+
+        function refreshClients() {
+            const query = searchInput.value.trim().toLowerCase();
+            let visible = 0;
+            let pending = 0;
+
+            [...tableBody.rows].forEach(row => {
+                const matchesText = row.textContent.toLowerCase().includes(query);
+                const matchesFilter = currentFilter === 'all' || row.dataset.status === currentFilter;
+                const show = matchesText && matchesFilter;
+                row.hidden = !show;
+                if (show) visible++;
+                if (row.dataset.status === 'pending' || row.dataset.status === 'overdue') pending++;
+            });
+
+            document.getElementById('resultCount').textContent = `${visible} ${visible === 1 ? 'client' : 'clients'}`;
+            document.getElementById('totalClients').textContent = tableBody.rows.length;
+            document.getElementById('pendingClients').textContent = pending;
+            document.getElementById('emptyMessage').hidden = visible !== 0;
+        }
+
+        searchInput.addEventListener('input', refreshClients);
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                currentFilter = button.dataset.filter;
+                filterButtons.forEach(item => item.classList.toggle('selected', item === button));
+                refreshClients();
+            });
+        });
+
+        document.getElementById('sendReminder').addEventListener('click', () => {
+            currentFilter = 'pending';
+            filterButtons.forEach(item => item.classList.toggle('selected', item.dataset.filter === 'pending'));
+            searchInput.value = '';
+            refreshClients();
+        });
+
+        const modal = document.getElementById('clientModal');
+        const form = document.getElementById('clientForm');
+
+        function closeModal() {
+            modal.classList.remove('show');
+            modal.setAttribute('aria-hidden', 'true');
+        }
+
+        document.getElementById('openModal').addEventListener('click', () => {
+            modal.classList.add('show');
+            modal.setAttribute('aria-hidden', 'false');
+            document.getElementById('clientName').focus();
+        });
+        document.getElementById('closeModal').addEventListener('click', closeModal);
+        modal.addEventListener('click', event => {
+            if (event.target === modal) closeModal();
+        });
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape') closeModal();
+        });
+
+        form.addEventListener('submit', event => {
+            event.preventDefault();
+            const name = document.getElementById('clientName').value.trim();
+            const email = document.getElementById('clientEmail').value.trim();
+            const phone = document.getElementById('clientPhone').value.trim();
+            const balance = Number(document.getElementById('clientBalance').value);
+            const status = balance <= 0 ? 'ontime' : 'pending';
+            const initials = name.split(/\s+/).map(part => part[0]).slice(0, 2).join('').toUpperCase();
+
+            const row = document.createElement('tr');
+            row.dataset.status = status;
+            const clientCell = document.createElement('td');
+            const wrapper = document.createElement('div');
+            wrapper.className = 'client-name';
+            const avatar = document.createElement('span');
+            avatar.className = 'avatar';
+            avatar.textContent = initials;
+            const details = document.createElement('div');
+            const strong = document.createElement('strong');
+            strong.textContent = name;
+            const small = document.createElement('small');
+            small.textContent = email;
+            details.append(strong, small);
+            wrapper.append(avatar, details);
+            clientCell.append(wrapper);
+
+            const phoneCell = document.createElement('td');
+            phoneCell.textContent = phone;
+            const balanceCell = document.createElement('td');
+            balanceCell.className = 'debt';
+            balanceCell.textContent = `$${balance.toFixed(2)}`;
+            const statusCell = document.createElement('td');
+            const badge = document.createElement('span');
+            badge.className = `status ${status}`;
+            badge.textContent = status === 'ontime' ? 'On time' : 'Pending';
+            statusCell.append(badge);
+            const actionCell = document.createElement('td');
+            const viewButton = document.createElement('button');
+            viewButton.type = 'button';
+            viewButton.className = 'view-btn';
+            viewButton.textContent = 'View';
+            actionCell.append(viewButton);
+            row.append(clientCell, phoneCell, balanceCell, statusCell, actionCell);
+            tableBody.prepend(row);
+            form.reset();
+            closeModal();
+            refreshClients();
+        });
+
+        tableBody.addEventListener('click', event => {
+            if (event.target.classList.contains('view-btn')) {
+                const row = event.target.closest('tr');
+                alert(row.cells[0].innerText + '\nPhone: ' + row.cells[1].innerText + '\nBalance: ' + row.cells[2].innerText + '\nStatus: ' + row.cells[3].innerText);
+            }
+        });
+
+        refreshClients();
+    </script>
+</body>
+</html>
