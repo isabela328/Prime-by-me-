@@ -1,0 +1,496 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIA'O - Reports</title>
+    <link rel="stylesheet" href="reports.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">FIA<span>'O</span></div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="credit.html">Credit</a>
+            <a href="products.html">Products</a>
+            <a href="client.html">Clients</a>
+            <a href="reports.html" class="active">Reports</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="page">
+
+        <!-- ENCABEZADO -->
+        <section class="report-heading">
+            <div>
+                <div class="title-line">
+                    <span class="chart-icon">◔</span>
+                    <h1>FIA'O Reports</h1>
+                    <button class="round-button" id="languageButton" title="Change language">A文</button>
+                    <button class="round-button" id="themeButton" title="Change theme">☾</button>
+                </div>
+
+                <p class="subtitle">
+                    Financial tracking, credit summaries, and business analytics overview.
+                </p>
+            </div>
+
+            <div class="export-buttons">
+                <button class="outline-button" id="exportPDF">📕 Export PDF</button>
+                <button class="outline-button" id="exportExcel">📗 Export Excel</button>
+            </div>
+        </section>
+
+        <!-- FILTROS -->
+        <section class="filters">
+            <div class="filter-group">
+                <label for="startDate">DATE RANGE</label>
+                <div class="date-fields">
+                    <input type="date" id="startDate" value="2026-07-01">
+                    <span>to</span>
+                    <input type="date" id="endDate" value="2026-07-31">
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <label for="customerFilter">CUSTOMER STATUS / NAME</label>
+                <select id="customerFilter">
+                    <option value="all">All Customers (All Names)</option>
+                    <option value="Kamila Barranco">Kamila Barranco</option>
+                    <option value="Sara Dominguez">Sara Dominguez</option>
+                    <option value="Derek Morales">Derek Morales</option>
+                    <option value="Maria Gomez">Maria Gomez</option>
+                    <option value="Carlos Mendoza">Carlos Mendoza</option>
+                    <option value="Ana Ruiz">Ana Ruiz</option>
+                    <option value="Luis Perez">Luis Perez</option>
+                    <option value="Sofia Castillo">Sofia Castillo</option>
+                    <option value="Jose Herrera">Jose Herrera</option>
+                </select>
+            </div>
+
+            <button class="apply-button" id="applyFilters">▼ Apply Filters</button>
+            <button class="clear-button" id="clearFilters">Clear Filters</button>
+        </section>
+
+        <!-- TARJETAS RESUMEN -->
+        <section class="stats-grid">
+
+            <article class="stat-card">
+                <div class="stat-top">
+                    <p>TOTAL ACTIVE CREDIT</p>
+                    <span class="stat-icon yellow-icon">▣</span>
+                </div>
+                <h2 id="totalCredit">$1,450.00</h2>
+                <p class="positive">↑ +8.4% from last month</p>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-top">
+                    <p>COLLECTED THIS MONTH</p>
+                    <span class="stat-icon green-icon">✓</span>
+                </div>
+                <h2 id="collected">$3,120.50</h2>
+                <p class="positive">↑ +12.1% efficiency</p>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-top">
+                    <p>PENDING BALANCES</p>
+                    <span class="stat-icon red-icon">!</span>
+                </div>
+                <h2 id="pendingBalances">$340.00</h2>
+                <p class="negative">↓ 3 accounts overdue</p>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-top">
+                    <p>TOTAL CUSTOMERS</p>
+                    <span class="stat-icon blue-icon">▣</span>
+                </div>
+                <h2 id="totalCustomers">48</h2>
+                <p class="positive">♟ +5 new this month</p>
+            </article>
+
+        </section>
+
+        <!-- GRÁFICAS -->
+        <section class="charts-grid">
+
+            <article class="chart-card">
+                <h2>Credit Activity &amp; Payments Flow</h2>
+
+                <div class="legend">
+                    <span><i class="dot credit-dot"></i> Credit Issued</span>
+                    <span><i class="dot payment-dot"></i> Payments Received</span>
+                    <span><i class="dot overdue-dot"></i> Overdue</span>
+                </div>
+
+                <div class="bar-chart">
+                    <div class="bar-group">
+                        <div class="bars">
+                            <span class="bar credit-bar" style="height: 88px;"></span>
+                            <span class="bar payment-bar" style="height: 132px;"></span>
+                            <span class="bar overdue-bar" style="height: 30px;"></span>
+                        </div>
+                        <span class="week-label">Week 1</span>
+                    </div>
+
+                    <div class="bar-group">
+                        <div class="bars">
+                            <span class="bar credit-bar" style="height: 117px;"></span>
+                            <span class="bar payment-bar" style="height: 160px;"></span>
+                            <span class="bar overdue-bar" style="height: 53px;"></span>
+                        </div>
+                        <span class="week-label">Week 2</span>
+                    </div>
+
+                    <div class="bar-group">
+                        <div class="bars">
+                            <span class="bar credit-bar" style="height: 73px;"></span>
+                            <span class="bar payment-bar" style="height: 103px;"></span>
+                            <span class="bar overdue-bar" style="height: 24px;"></span>
+                        </div>
+                        <span class="week-label">Week 3</span>
+                    </div>
+
+                    <div class="bar-group">
+                        <div class="bars">
+                            <span class="bar credit-bar" style="height: 145px;"></span>
+                            <span class="bar payment-bar" style="height: 190px;"></span>
+                            <span class="bar overdue-bar" style="height: 60px;"></span>
+                        </div>
+                        <span class="week-label">Week 4</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="chart-card payment-breakdown">
+                <h2>Payment Status Breakdown</h2>
+
+                <div class="progress-item">
+                    <div class="progress-label">
+                        <strong>On Time (75%)</strong>
+                        <strong>$2,340</strong>
+                    </div>
+                    <div class="progress-track">
+                        <div class="progress-fill ontime-fill" style="width:75%"></div>
+                    </div>
+                </div>
+
+                <div class="progress-item">
+                    <div class="progress-label">
+                        <strong>Pending (17%)</strong>
+                        <strong>$540</strong>
+                    </div>
+                    <div class="progress-track">
+                        <div class="progress-fill pending-fill" style="width:17%"></div>
+                    </div>
+                </div>
+
+                <div class="progress-item">
+                    <div class="progress-label">
+                        <strong>Overdue (8%)</strong>
+                        <strong>$240</strong>
+                    </div>
+                    <div class="progress-track">
+                        <div class="progress-fill overdue-fill" style="width:8%"></div>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- TABLA DE TRANSACCIONES -->
+        <section class="transactions">
+            <div class="transactions-heading">
+                <h2>Recent Credit Transactions</h2>
+                <span id="transactionCount">9 transactions</span>
+            </div>
+
+            <div class="table-container">
+                <table class="transactions-table">
+                    <thead>
+                        <tr>
+                            <th>Customer Name</th>
+                            <th>Description</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="transactionsBody"></tbody>
+                </table>
+
+                <p id="noResults" class="no-results" hidden>
+                    No transactions found for these filters.
+                </p>
+            </div>
+
+            <div class="pagination" id="pagination">
+                <button class="page-btn active" data-page="1">1</button>
+                <button class="page-btn" data-page="2">2</button>
+                <button class="page-btn" data-page="3">3</button>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 FIA'O — Credit Management System</p>
+        </footer>
+
+    </main>
+
+    <script>
+        // Datos de demostración. Cambia los importes y fechas por los reales.
+        const transactions = [
+            {
+                name: "Kamila Barranco",
+                description: "Grocery items & supplies",
+                amount: 45.00,
+                date: "2026-07-28",
+                status: "On Time"
+            },
+            {
+                name: "Sara Dominguez",
+                description: "Weekly store credit",
+                amount: 120.00,
+                date: "2026-07-25",
+                status: "Pending"
+            },
+            {
+                name: "Derek Morales",
+                description: "Bakery stock order",
+                amount: 85.50,
+                date: "2026-07-18",
+                status: "Overdue"
+            },
+            {
+                name: " Isabela Villagra",
+                description: "Household supplies",
+                amount: 60.00,
+                date: "2026-07-15",
+                status: "On Time"
+            },
+            {
+                name: "Julian Remy",
+                description: "Weekly grocery credit",
+                amount: 75.00,
+                date: "2026-07-12",
+                status: "Pending"
+            },
+            {
+                name: "Dayana Dixon",
+                description: "Bakery products",
+                amount: 32.00,
+                date: "2026-07-10",
+                status: "Overdue"
+            },
+            {
+                name: "Emanuel Rivera",
+                description: "Food and beverages",
+                amount: 95.00,
+                date: "2026-07-08",
+                status: "On Time"
+            },
+            {
+                name: "Kriss Tryhane",
+                description: "Store supplies",
+                amount: 50.00,
+                date: "2026-07-05",
+                status: "Pending"
+            },
+            {
+                name: "Jacobo Gonzales",
+                description: "Credit purchase",
+                amount: 40.00,
+                date: "2026-07-02",
+                status: "On Time"
+            }
+        ];
+
+        const rowsPerPage = 3;
+        let currentPage = 1;
+        let filteredTransactions = [...transactions];
+
+        const transactionsBody = document.getElementById("transactionsBody");
+        const pageButtons = document.querySelectorAll(".page-btn");
+        const noResults = document.getElementById("noResults");
+        const transactionCount = document.getElementById("transactionCount");
+
+        function formatMoney(amount) {
+            return amount.toLocaleString("en-US", {
+                style: "currency",
+                currency: "USD"
+            });
+        }
+
+        function statusClass(status) {
+            if (status === "On Time") return "ontime";
+            if (status === "Pending") return "pending";
+            return "overdue";
+        }
+
+        function renderPagination() {
+            const totalPages = Math.ceil(filteredTransactions.length / rowsPerPage);
+            const pagination = document.getElementById("pagination");
+
+            pagination.innerHTML = "";
+
+            for (let page = 1; page <= totalPages; page++) {
+                const button = document.createElement("button");
+                button.className = "page-btn" + (page === currentPage ? " active" : "");
+                button.textContent = page;
+                button.dataset.page = page;
+
+                button.addEventListener("click", () => {
+                    currentPage = page;
+                    renderTransactions();
+                });
+
+                pagination.appendChild(button);
+            }
+
+            pagination.hidden = totalPages <= 1;
+        }
+
+        function renderTransactions() {
+            const start = (currentPage - 1) * rowsPerPage;
+            const visibleTransactions = filteredTransactions.slice(start, start + rowsPerPage);
+
+            transactionsBody.innerHTML = visibleTransactions.map(item => `
+                <tr>
+                    <td><strong>${item.name}</strong></td>
+                    <td>${item.description}</td>
+                    <td>${formatMoney(item.amount)}</td>
+                    <td>${item.date}</td>
+                    <td>
+                        <span class="status ${statusClass(item.status)}">
+                            ${item.status}
+                        </span>
+                    </td>
+                </tr>
+            `).join("");
+
+            noResults.hidden = filteredTransactions.length !== 0;
+            transactionCount.textContent =
+                `${filteredTransactions.length} transaction${filteredTransactions.length === 1 ? "" : "s"}`;
+
+            renderPagination();
+        }
+
+        function applyFilters() {
+            const selectedCustomer = document.getElementById("customerFilter").value;
+            const startDate = document.getElementById("startDate").value;
+            const endDate = document.getElementById("endDate").value;
+
+            filteredTransactions = transactions.filter(item => {
+                const matchesCustomer =
+                    selectedCustomer === "all" || item.name === selectedCustomer;
+
+                const matchesStart = !startDate || item.date >= startDate;
+                const matchesEnd = !endDate || item.date <= endDate;
+
+                return matchesCustomer && matchesStart && matchesEnd;
+            });
+
+            currentPage = 1;
+            renderTransactions();
+        }
+
+        document.getElementById("applyFilters").addEventListener("click", applyFilters);
+
+        document.getElementById("clearFilters").addEventListener("click", () => {
+            document.getElementById("customerFilter").value = "all";
+            document.getElementById("startDate").value = "";
+            document.getElementById("endDate").value = "";
+            filteredTransactions = [...transactions];
+            currentPage = 1;
+            renderTransactions();
+        });
+
+        // Exportar las transacciones filtradas a Excel
+        document.getElementById("exportExcel").addEventListener("click", () => {
+            if (typeof XLSX === "undefined") {
+                alert("Excel export could not load. Check your internet connection.");
+                return;
+            }
+
+            const data = filteredTransactions.map(item => ({
+                "Customer Name": item.name,
+                "Description": item.description,
+                "Amount": item.amount,
+                "Date": item.date,
+                "Status": item.status
+            }));
+
+            const worksheet = XLSX.utils.json_to_sheet(data);
+            const workbook = XLSX.utils.book_new();
+
+            XLSX.utils.book_append_sheet(workbook, worksheet, "Transactions");
+            XLSX.writeFile(workbook, "FIAO-Reports.xlsx");
+        });
+
+        // Exportar las transacciones filtradas a PDF
+        document.getElementById("exportPDF").addEventListener("click", () => {
+            if (!window.jspdf) {
+                alert("PDF export could not load. Check your internet connection.");
+                return;
+            }
+
+            const { jsPDF } = window.jspdf;
+            const pdf = new jsPDF();
+
+            pdf.setFontSize(18);
+            pdf.text("FIA'O - Recent Credit Transactions", 14, 20);
+
+            pdf.setFontSize(10);
+            let y = 32;
+
+            pdf.text("Customer", 14, y);
+            pdf.text("Description", 65, y);
+            pdf.text("Amount", 125, y);
+            pdf.text("Date", 153, y);
+            pdf.text("Status", 180, y);
+
+            y += 7;
+
+            filteredTransactions.forEach(item => {
+                if (y > 280) {
+                    pdf.addPage();
+                    y = 20;
+                }
+
+                pdf.text(item.name, 14, y);
+                pdf.text(item.description.substring(0, 28), 65, y);
+                pdf.text(formatMoney(item.amount), 125, y);
+                pdf.text(item.date, 153, y);
+                pdf.text(item.status, 180, y);
+                y += 9;
+            });
+
+            pdf.save("FIAO-Reports.pdf");
+        });
+
+        // Alternar tema claro y oscuro
+        document.getElementById("themeButton").addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+        });
+
+        // Botón de idioma: informa que el diseño actual está en inglés
+        document.getElementById("languageButton").addEventListener("click", () => {
+            alert("The Reports page is currently displayed in English.");
+        });
+
+        renderTransactions();
+    </script>
+
+</body>
+</html>
