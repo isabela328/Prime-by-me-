@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIA'O - Sign Up</title>
+    <link rel="stylesheet" href="signup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="index.html" class="logo">FIA<span>´O</span></a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="credit.html">Credit</a>
+            <a href="products.html">Products</a>
+            <a href="client.html">Clients</a>
+            <a href="reports.html">Reports</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- SIGN UP SECTION -->
+    <main class="signup-container">
+
+        <!-- LEFT SIDE -->
+        <section class="signup-info">
+            <h1 class="brand-title">FIA'O</h1>
+
+            <h2>Sign up for<br><span>free</span></h2>
+
+            <div class="description">
+                <div class="dot-decoration">
+                    <span></span><span></span>
+                    <span></span><span></span>
+                    <span></span><span></span>
+                    <span></span><span></span>
+                    <span></span><span></span>
+                </div>
+
+                <p>
+                    Create your account on FIA'O and start managing your credit sales
+                    easily, securely, and in an organized way.
+                </p>
+            </div>
+
+            <div class="benefits">
+
+                <div class="benefit">
+                    <div class="benefit-icon user-icon">♙</div>
+                    <div>
+                        <h3>Fast &amp; Easy</h3>
+                        <p>Create your account in just a few minutes and start using the platform.</p>
+                    </div>
+                </div>
+
+                <div class="benefit">
+                    <div class="benefit-icon shield-icon">⬟</div>
+                    <div>
+                        <h3>Secure</h3>
+                        <p>We protect your business and customer information.</p>
+                    </div>
+                </div>
+
+                <div class="benefit">
+                    <div class="benefit-icon cloud-icon">☁</div>
+                    <div>
+                        <h3>Cloud-Based</h3>
+                        <p>Access your information anytime, anywhere, from any device.</p>
+                    </div>
+                </div>
+
+                <div class="benefit">
+                    <div class="benefit-icon chart-icon">▥</div>
+                    <div>
+                        <h3>Greater Control</h3>
+                        <p>Keep track of your debits and business growth seamlessly.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- RIGHT SIDE: FORM -->
+        <section class="signup-form-section">
+            <div class="signup-card">
+
+                <h2>Create your account</h2>
+                <p class="form-subtitle">Complete the form to get started</p>
+
+                <form id="signupForm">
+
+                    <div class="form-group">
+                        <label for="fullName">Full name *</label>
+                        <input
+                            type="text"
+                            id="fullName"
+                            name="fullName"
+                            placeholder="Add your name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Add your email"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="Add your number"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="businessName">Business Name *</label>
+                        <input
+                            type="text"
+                            id="businessName"
+                            name="businessName"
+                            placeholder="Ejem: Tienda Doña Carmen"
+                            required
+                        >
+                    </div>
+
+                    <div class="password-row">
+                        <div class="form-group">
+                            <label for="password">Password *</label>
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Add your password"
+                                minlength="6"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password *</label>
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                name="confirmPassword"
+                                placeholder="Confirm"
+                                minlength="6"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <button type="submit" class="signup-button">
+                        Create My Account
+                    </button>
+
+                    <p class="signin-text">
+                        Already have an account?
+                        <a href="login.html">Sign In</a>
+                    </p>
+
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        const signupForm = document.getElementById("signupForm");
+
+        signupForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const fullName = document.getElementById("fullName").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+            const businessName = document.getElementById("businessName").value.trim();
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match. Please try again.");
+                return;
+            }
+
+            const user = {
+                fullName: fullName,
+                email: email,
+                phone: phone,
+                businessName: businessName
+            };
+
+            localStorage.setItem("fiaoUser", JSON.stringify(user));
+            localStorage.setItem("fiaoUserEmail", email);
+
+            alert("Your information has been validated!");
+
+            window.location.href = "login.html";
+        });
+    </script>
+
+</body>
+</html>

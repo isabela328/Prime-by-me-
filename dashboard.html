@@ -11,25 +11,28 @@
 
 <body>
 
+    <!-- NAVBAR -->
     <header class="navbar">
         <a href="index.html" class="logo">FIA<span>'O</span></a>
 
         <nav>
             <a href="index.html">Home</a>
             <a href="credit.html">Credit</a>
-            <a href="product.html">Products</a>
+            <a href="products.html">Products</a>
             <a href="client.html">Clients</a>
             <a href="reports.html">Reports</a>
             <a href="contact.html">Contact</a>
         </nav>
     </header>
 
+    <!-- DASHBOARD -->
     <main class="dashboard">
 
+        <!-- WELCOME AND PROFILE -->
         <section class="welcome">
             <div class="welcome-text">
                 <p class="brand-label">FIA'O</p>
-                <h1>Welcome, Ana Rodriguez</h1>
+                <h1 id="welcomeTitle">Welcome, Jacobo Gonzales</h1>
                 <p class="subtitle">
                     Everything you need to manage your business is right here.
                 </p>
@@ -39,29 +42,31 @@
                     aria-expanded="false" aria-controls="profileMenu">
                 <span class="profile-icon">♙</span>
                 <span class="profile-info">
-                    <strong>Ana Rodriguez</strong>
-                    <small>Mini Super Ana</small>
+                    <strong id="profileName">Jacobo Gonzales</strong>
+                    <small id="profileEmail">No email entered</small>
                 </span>
                 <span class="arrow">⌄</span>
             </button>
 
-            <!-- MENÚ DEL PERFIL -->
+            <!-- PROFILE MENU -->
             <div class="profile-menu" id="profileMenu" hidden>
 
                 <div class="menu-user">
                     <div class="menu-avatar">♙</div>
                     <div class="menu-user-info">
-                        <strong>Ana Rodriguez</strong>
-                        <small>Mini Super Ana</small>
+                        <strong id="menuProfileName">Jacobo Gonzales</strong>
+                        <small id="menuProfileEmail">No email entered</small>
                     </div>
                 </div>
 
                 <a href="#" class="menu-option" data-menu>
                     <span>♙</span> My Profile
                 </a>
+
                 <a href="#" class="menu-option" data-menu>
                     <span>✎</span> Edit Profile
                 </a>
+
                 <a href="#" class="menu-option" data-menu>
                     <span>▣</span> Change Profile Picture
                 </a>
@@ -71,25 +76,28 @@
                 <a href="#" class="menu-option" data-menu>
                     <span>☼</span> Theme
                 </a>
+
                 <a href="#" class="menu-option" data-menu>
                     <span>文</span> Language (EN/ES)
                 </a>
+
                 <a href="#" class="menu-option" data-menu>
                     <span>♧</span> Notifications
                 </a>
+
                 <a href="#" class="menu-option" data-menu>
                     <span>⚙</span> Settings
                 </a>
 
                 <hr>
 
-                <a href="login.html" class="menu-option logout-option">
+                <a href="login.html" class="menu-option logout-option" id="logoutButton">
                     <span>⇥</span> Log Out
                 </a>
             </div>
         </section>
 
-        <!-- ACCESOS PRINCIPALES -->
+        <!-- QUICK LINKS -->
         <section class="quick-links" aria-label="Main sections">
 
             <a class="feature-card" href="client.html">
@@ -151,9 +159,10 @@
 
         </section>
 
-        <!-- ESTADÍSTICAS -->
+        <!-- STATISTICS -->
         <section class="statistics">
             <h2>Quick Statistics</h2>
+
             <div class="stats-grid">
 
                 <article class="stat-card">
@@ -205,7 +214,7 @@
             </div>
         </section>
 
-        <!-- ACTIVIDAD RECIENTE -->
+        <!-- RECENT ACTIVITY -->
         <section class="activity">
             <h2>Recent Activity</h2>
 
@@ -256,7 +265,7 @@
 
     </main>
 
-    <!-- BOTÓN DE CHAT -->
+    <!-- CHAT BUTTON -->
     <button class="chat-button" id="chatButton" type="button"
             aria-label="Open support message">
         <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -299,13 +308,28 @@
     </footer>
 
     <script>
+        // ELEMENTOS DEL DASHBOARD
         const profileButton = document.getElementById("profileButton");
         const profileMenu = document.getElementById("profileMenu");
         const chatButton = document.getElementById("chatButton");
         const chatMessage = document.getElementById("chatMessage");
 
-        // Abrir y cerrar el menú del perfil.
-        profileButton.addEventListener("click", function (event) {
+        // MOSTRAR EL CORREO GUARDADO EN LOGIN
+        const savedEmail = localStorage.getItem("fiaoUserEmail");
+
+        const profileEmail = document.getElementById("profileEmail");
+        const menuProfileEmail = document.getElementById("menuProfileEmail");
+
+        if (savedEmail) {
+            profileEmail.textContent = savedEmail;
+            menuProfileEmail.textContent = savedEmail;
+        } else {
+            profileEmail.textContent = "No email entered";
+            menuProfileEmail.textContent = "No email entered";
+        }
+
+        // ABRIR Y CERRAR EL MENÚ DEL PERFIL
+        profileButton.addEventListener("click", function(event) {
             event.stopPropagation();
 
             profileMenu.hidden = !profileMenu.hidden;
@@ -316,8 +340,8 @@
             );
         });
 
-        // Evitar que el menú se cierre al tocar sus opciones.
-        profileMenu.addEventListener("click", function (event) {
+        // EVITAR QUE EL MENÚ SE CIERRE AL TOCAR SUS OPCIONES
+        profileMenu.addEventListener("click", function(event) {
             event.stopPropagation();
 
             const option = event.target.closest("[data-menu]");
@@ -327,25 +351,67 @@
             }
         });
 
-        // Cerrar el menú al tocar fuera.
-        document.addEventListener("click", function () {
+        // CERRAR EL MENÚ AL TOCAR FUERA
+        document.addEventListener("click", function() {
             profileMenu.hidden = true;
             profileButton.setAttribute("aria-expanded", "false");
         });
 
-        // Cerrar el menú con Escape.
-        document.addEventListener("keydown", function (event) {
+        // CERRAR EL MENÚ CON ESCAPE
+        document.addEventListener("keydown", function(event) {
             if (event.key === "Escape") {
                 profileMenu.hidden = true;
                 profileButton.setAttribute("aria-expanded", "false");
             }
         });
 
-        // Abrir y cerrar el chat.
-        chatButton.addEventListener("click", function () {
+        // ABRIR Y CERRAR EL CHAT
+        chatButton.addEventListener("click", function() {
             chatMessage.hidden = !chatMessage.hidden;
+        });
+
+        // CERRAR SESIÓN
+        document.getElementById("logoutButton").addEventListener("click", function() {
+            localStorage.removeItem("fiaoUserEmail");
         });
     </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const email = localStorage.getItem("fiaoUserEmail") || "";
+
+    function getNameFromEmail(email) {
+        const username = email.split("@")[0];
+
+        const name = username
+            .replace(/[._-]+/g, " ")
+            .replace(/\d+/g, " ")
+            .trim()
+            .replace(/\s+/g, " ");
+
+        if (!name) return "User";
+
+        return name
+            .split(" ")
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+            .join(" ");
+    }
+
+    const userName = email ? getNameFromEmail(email) : "User";
+
+    const welcome = document.getElementById("welcomeTitle");
+    const profileName = document.getElementById("profileName");
+    const menuProfileName = document.getElementById("menuProfileName");
+    const profileEmail = document.getElementById("profileEmail");
+    const menuProfileEmail = document.getElementById("menuProfileEmail");
+
+    if (welcome) welcome.textContent = "Welcome, " + userName;
+    if (profileName) profileName.textContent = userName;
+    if (menuProfileName) menuProfileName.textContent = userName;
+    if (profileEmail) profileEmail.textContent = email || "No email entered";
+    if (menuProfileEmail) menuProfileEmail.textContent = email || "No email entered";
+});
+</script>
 </body>
 </html>
+
