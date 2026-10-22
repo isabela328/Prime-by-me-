@@ -1,28 +1,19 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>FIA'O - Products</title>
-
     <link rel="stylesheet" href="product.css">
 </head>
 
 <body>
-
-    <!-- =========================
-         NAVBAR
-    ========================== -->
-
+    <!-- NAVBAR -->
     <header class="navbar">
+        <a href="index.html" class="logo">FIA<span>'O</span></a>
 
-        <div class="logo">
-            FIA<span>'O</span>
-        </div>
-
-        <nav>
+        <nav class="nav-links">
             <a href="index.html">Home</a>
             <a href="credit.html">Credit</a>
             <a href="product.html" class="active">Products</a>
@@ -30,411 +21,237 @@
             <a href="reports.html">Reports</a>
             <a href="contact.html">Contact</a>
         </nav>
-
     </header>
 
-
-    <!-- =========================
-         SEARCH BAR
-    ========================== -->
-
+    <!-- SEARCH AND TOOLS -->
     <section class="top-tools">
-
-        <div class="small-logo">
-            FIA<span>'O</span>
-        </div>
+        <div class="small-logo">FIA<span>'O</span></div>
 
         <div class="search-box">
-
             <span class="search-icon">🔍</span>
-
             <input
                 type="text"
+                id="productSearch"
                 placeholder="Search products, pantry, drinks..."
+                aria-label="Search products"
             >
-
         </div>
 
         <div class="tools-right">
-
-            <button class="language">
-                🌐 ES
-            </button>
-
-            <button class="dark-mode">
-                🌙
-            </button>
-
+            <button class="language" type="button">🌐 ES</button>
+            <button
+                class="dark-mode"
+                type="button"
+                aria-label="Toggle dark mode"
+            >🌙</button>
         </div>
-
     </section>
 
-
-    <!-- =========================
-         MAIN
-    ========================== -->
-
+    <!-- PRODUCTS PAGE -->
     <main class="products-page">
 
-
-        <!-- TABS -->
-
         <div class="tabs">
-
-            <button class="tab active">
-                Inventory
-            </button>
-
-            <button class="tab">
-                Register Fiado Sale
-            </button>
-
+            <button class="tab active" type="button">Inventory</button>
+            <button class="tab" type="button">Register Fiado Sale</button>
         </div>
 
-
-        <!-- INTRO -->
-
         <section class="intro">
-
-            <h1>
-                Your inventory, always exact
-            </h1>
-
-            <p>
-                Showing core products and add option.
-                Use search bar to look up items.
-            </p>
-
+            <h1>Your inventory, always exact</h1>
+            <p>Showing core products and add option. Use search bar to look up items.</p>
         </section>
 
+        <!-- PRODUCT CARDS -->
+        <section class="products-grid" id="productsGrid">
 
-        <!-- =========================
-             PRODUCT GRID
-        ========================== -->
-
-        <section class="products-grid">
-
-
-            <!-- =====================
-                 SUGAR
-            ====================== -->
-
-            <article class="product-card">
-
+            <!-- SUGAR -->
+            <article class="product-card" data-search="sugar pantry">
                 <div class="product-top">
-
-                    <div class="product-image sugar-image">
+                    <div class="product-image sugar-image" role="img" aria-label="Sugar illustration">
                         🧂
                     </div>
 
                     <div class="product-info">
-
-                        <span class="category">
-                            Pantry
-                        </span>
-
-                        <h2>
-                            Sugar
-                        </h2>
-
-                        <strong class="price">
-                            B/. 0.85
-                        </strong>
-
+                        <span class="category">Pantry</span>
+                        <h2>Sugar</h2>
+                        <strong class="price">B/. 0.85</strong>
                     </div>
-
                 </div>
-
 
                 <div class="stock">
-
-                    <span>
-                        Stock:
-                    </span>
-
-                    <strong>
-                        25 lb
-                    </strong>
-
+                    <span>Stock:</span>
+                    <strong>25 lb</strong>
                 </div>
-
 
                 <div class="product-actions">
-
-                    <button>
-                        ✎ Edit
-                    </button>
-
-                    <button>
-                        🗑 Delete
-                    </button>
-
+                    <button type="button">✎ Edit</button>
+                    <button type="button">🗑 Delete</button>
                 </div>
-
             </article>
 
-
-            <!-- =====================
-                 RICE
-            ====================== -->
-
-            <article class="product-card">
-
+            <!-- RICE -->
+            <article class="product-card" data-search="rice pantry">
                 <div class="product-top">
-
-                    <div class="product-image rice-image">
+                    <div class="product-image rice-image" role="img" aria-label="Rice illustration">
                         🍚
                     </div>
 
                     <div class="product-info">
-
-                        <span class="category">
-                            Pantry
-                        </span>
-
-                        <h2>
-                            Rice
-                        </h2>
-
-                        <strong class="price">
-                            B/. 0.95
-                        </strong>
-
+                        <span class="category">Pantry</span>
+                        <h2>Rice</h2>
+                        <strong class="price">B/. 0.95</strong>
                     </div>
-
                 </div>
-
 
                 <div class="stock">
-
-                    <span>
-                        Stock:
-                    </span>
-
-                    <strong>
-                        38 lb
-                    </strong>
-
+                    <span>Stock:</span>
+                    <strong>38 lb</strong>
                 </div>
-
 
                 <div class="product-actions">
-
-                    <button>
-                        ✎ Edit
-                    </button>
-
-                    <button>
-                        🗑 Delete
-                    </button>
-
+                    <button type="button">✎ Edit</button>
+                    <button type="button">🗑 Delete</button>
                 </div>
-
             </article>
 
-
-            <!-- =====================
-                 WHITE BREAD
-            ====================== -->
-
-            <article class="product-card">
-
+            <!-- WHITE BREAD -->
+            <article class="product-card" data-search="white bread bakery">
                 <div class="product-top">
-
-                    <div class="product-image bread-image">
+                    <div class="product-image bread-image" role="img" aria-label="White bread illustration">
                         🍞
                     </div>
 
                     <div class="product-info">
-
-                        <span class="category">
-                            Bakery
-                        </span>
-
-                        <h2>
-                            White Bread
-                        </h2>
-
-                        <strong class="price">
-                            B/. 1.50
-                        </strong>
-
+                        <span class="category">Bakery</span>
+                        <h2>White Bread</h2>
+                        <strong class="price">B/. 1.50</strong>
                     </div>
-
                 </div>
-
 
                 <div class="stock">
-
-                    <span>
-                        Stock:
-                    </span>
-
-                    <strong>
-                        12 Unit
-                    </strong>
-
+                    <span>Stock:</span>
+                    <strong>12 Unit</strong>
                 </div>
-
 
                 <div class="product-actions">
-
-                    <button>
-                        ✎ Edit
-                    </button>
-
-                    <button>
-                        🗑 Delete
-                    </button>
-
+                    <button type="button">✎ Edit</button>
+                    <button type="button">🗑 Delete</button>
                 </div>
-
             </article>
 
-
-            <!-- =====================
-                 COCA COLA
-            ====================== -->
-
-            <article class="product-card">
-
+            <!-- COCA COLA -->
+            <article class="product-card" data-search="coca cola drinks beverages">
                 <div class="product-top">
-
-                    <div class="product-image coke-image">
+                    <div class="product-image coke-image" role="img" aria-label="Drink illustration">
                         🥤
                     </div>
 
                     <div class="product-info">
-
-                        <span class="category">
-                            Beverages
-                        </span>
-
-                        <h2>
-                            Coca Cola 2L
-                        </h2>
-
-                        <strong class="price">
-                            B/. 2.10
-                        </strong>
-
+                        <span class="category">Beverages</span>
+                        <h2>Coca Cola 2L</h2>
+                        <strong class="price">B/. 2.10</strong>
                     </div>
-
                 </div>
-
 
                 <div class="stock">
-
-                    <span>
-                        Stock:
-                    </span>
-
-                    <strong>
-                        20 Bottle
-                    </strong>
-
+                    <span>Stock:</span>
+                    <strong>20 Bottle</strong>
                 </div>
-
 
                 <div class="product-actions">
-
-                    <button>
-                        ✎ Edit
-                    </button>
-
-                    <button>
-                        🗑 Delete
-                    </button>
-
+                    <button type="button">✎ Edit</button>
+                    <button type="button">🗑 Delete</button>
                 </div>
-
             </article>
 
-
-            <!-- =====================
-                 EGGS
-            ====================== -->
-
-            <article class="product-card">
-
+            <!-- EGGS -->
+            <article class="product-card" data-search="eggs dairy">
                 <div class="product-top">
-
-                    <div class="product-image eggs-image">
+                    <div class="product-image eggs-image" role="img" aria-label="Eggs illustration">
                         🥚
                     </div>
 
                     <div class="product-info">
-
-                        <span class="category">
-                            Dairy
-                        </span>
-
-                        <h2>
-                            Eggs (Dozen)
-                        </h2>
-
-                        <strong class="price">
-                            B/. 3.20
-                        </strong>
-
+                        <span class="category">Dairy</span>
+                        <h2>Eggs (Dozen)</h2>
+                        <strong class="price">B/. 3.20</strong>
                     </div>
-
                 </div>
-
 
                 <div class="stock">
-
-                    <span>
-                        Stock:
-                    </span>
-
-                    <strong>
-                        15 Pack
-                    </strong>
-
+                    <span>Stock:</span>
+                    <strong>15 Pack</strong>
                 </div>
-
 
                 <div class="product-actions">
-
-                    <button>
-                        ✎ Edit
-                    </button>
-
-                    <button>
-                        🗑 Delete
-                    </button>
-
+                    <button type="button">✎ Edit</button>
+                    <button type="button">🗑 Delete</button>
                 </div>
-
             </article>
 
-
-            <!-- =====================
-                 ADD PRODUCT
-            ====================== -->
-
-            <article class="add-product">
-
-                <div class="plus">
-                    +
-                </div>
-
-                <h2>
-                    Add New Product
-                </h2>
-
-                <p>
-                    Create a new item
-                </p>
-
+            <!-- ADD PRODUCT -->
+            <article class="add-product" id="addProduct" tabindex="0">
+                <div class="plus">+</div>
+                <h2>Add New Product</h2>
+                <p>Create a new item</p>
             </article>
 
+            <p class="no-results" id="noResults" hidden>
+                No products found.
+            </p>
 
         </section>
-
     </main>
 
-</body>
+    <!-- SEARCH AND DARK MODE -->
+    <script>
+        const searchInput = document.getElementById("productSearch");
+        const productCards = document.querySelectorAll(".product-card");
+        const noResults = document.getElementById("noResults");
+        const addProduct = document.getElementById("addProduct");
+        const darkModeButton = document.querySelector(".dark-mode");
 
+        searchInput.addEventListener("input", function () {
+            const searchTerm = this.value.trim().toLowerCase();
+            let visibleProducts = 0;
+
+            productCards.forEach(function (card) {
+                const searchableText = card.dataset.search.toLowerCase();
+                const matches = searchableText.includes(searchTerm);
+
+                card.hidden = !matches;
+
+                if (matches) {
+                    visibleProducts++;
+                }
+            });
+
+            noResults.hidden = visibleProducts !== 0;
+            addProduct.hidden = searchTerm.length > 0;
+        });
+
+        darkModeButton.addEventListener("click", function () {
+            document.body.classList.toggle("dark-theme");
+
+            const darkModeEnabled =
+                document.body.classList.contains("dark-theme");
+
+            darkModeButton.textContent = darkModeEnabled ? "☀️" : "🌙";
+            darkModeButton.setAttribute(
+                "aria-label",
+                darkModeEnabled ? "Toggle light mode" : "Toggle dark mode"
+            );
+        });
+
+        addProduct.addEventListener("click", function () {
+            alert("The option to add a new product will be available soon.");
+        });
+
+        addProduct.addEventListener("keydown", function (event) {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                addProduct.click();
+            }
+        });
+    </script>
+</body>
 </html>
