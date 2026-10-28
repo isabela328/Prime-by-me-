@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FIA'O - Products</title>
     <link rel="stylesheet" href="product.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!-- NAVBAR -->
+
     <header class="navbar">
         <a href="index.html" class="logo">FIA<span>'O</span></a>
 
@@ -21,237 +24,290 @@
             <a href="reports.html">Reports</a>
             <a href="contact.html">Contact</a>
         </nav>
+
+        <button class="dark-mode" id="darkModeBtn" type="button"
+                aria-label="Toggle dark mode">☾</button>
     </header>
 
-    <!-- SEARCH AND TOOLS -->
-    <section class="top-tools">
-        <div class="small-logo">FIA<span>'O</span></div>
+    <main class="page-container">
 
-        <div class="search-box">
-            <span class="search-icon">🔍</span>
-            <input
-                type="text"
-                id="productSearch"
-                placeholder="Search products, pantry, drinks..."
-                aria-label="Search products"
-            >
-        </div>
+        <section class="page-heading">
+            <div>
+                <p class="eyebrow">INVENTORY MANAGEMENT</p>
+                <h1>Our Products<span>.</span></h1>
+                <p class="subtitle">
+                    Manage your products, prices, and inventory in one place.
+                </p>
+            </div>
 
-        <div class="tools-right">
-            <button class="language" type="button">🌐 ES</button>
-            <button
-                class="dark-mode"
-                type="button"
-                aria-label="Toggle dark mode"
-            >🌙</button>
-        </div>
-    </section>
-
-    <!-- PRODUCTS PAGE -->
-    <main class="products-page">
-
-        <div class="tabs">
-            <button class="tab active" type="button">Inventory</button>
-            <button class="tab" type="button">Register Fiado Sale</button>
-        </div>
-
-        <section class="intro">
-            <h1>Your inventory, always exact</h1>
-            <p>Showing core products and add option. Use search bar to look up items.</p>
+            <div class="top-tools">
+                <div class="search-box">
+                    <span aria-hidden="true">⌕</span>
+                    <input type="search" id="productSearch"
+                           placeholder="Search products..."
+                           aria-label="Search products">
+                </div>
+            </div>
         </section>
 
-        <!-- PRODUCT CARDS -->
-        <section class="products-grid" id="productsGrid">
+        <section class="inventory-summary">
+            <div class="summary-item">
+                <span class="summary-icon">▦</span>
+                <div>
+                    <p>Total Products</p>
+                    <h2 id="totalProducts">5</h2>
+                </div>
+            </div>
 
-            <!-- SUGAR -->
-            <article class="product-card" data-search="sugar pantry">
-                <div class="product-top">
-                    <div class="product-image sugar-image" role="img" aria-label="Sugar illustration">
-                        🧂
+            <div class="summary-item">
+                <span class="summary-icon yellow-icon">◉</span>
+                <div>
+                    <p>Inventory Status</p>
+                    <h2>Available</h2>
+                </div>
+            </div>
+        </section>
+
+        <section class="products-section">
+            <div class="section-heading">
+                <div>
+                    <h2>Product Inventory</h2>
+                    <p>All your store essentials in one place.</p>
+                </div>
+
+                <span class="product-count" id="productCount">5 products</span>
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+
+                <!-- SUGAR -->
+                <article class="product-card" data-search="sugar pantry">
+                    <div class="product-top">
+                        <div class="product-image sugar-image">
+                            <img src="product%20images/azucar.jpg"
+                                 alt="Sugar"
+                                 onerror="this.style.display='none'">
+                        </div>
+
+                        <div class="product-info">
+                            <span class="category">PANTRY</span>
+                            <h3>Sugar</h3>
+                            <p class="price">B/. 0.85</p>
+                        </div>
                     </div>
 
-                    <div class="product-info">
-                        <span class="category">Pantry</span>
-                        <h2>Sugar</h2>
-                        <strong class="price">B/. 0.85</strong>
-                    </div>
-                </div>
-
-                <div class="stock">
-                    <span>Stock:</span>
-                    <strong>25 lb</strong>
-                </div>
-
-                <div class="product-actions">
-                    <button type="button">✎ Edit</button>
-                    <button type="button">🗑 Delete</button>
-                </div>
-            </article>
-
-            <!-- RICE -->
-            <article class="product-card" data-search="rice pantry">
-                <div class="product-top">
-                    <div class="product-image rice-image" role="img" aria-label="Rice illustration">
-                        🍚
+                    <div class="stock-row">
+                        <span>Stock:</span>
+                        <strong>25 lb</strong>
                     </div>
 
-                    <div class="product-info">
-                        <span class="category">Pantry</span>
-                        <h2>Rice</h2>
-                        <strong class="price">B/. 0.95</strong>
+                    <div class="product-actions">
+                        <button class="edit-button" type="button"
+                                data-product="Sugar">✎ Edit</button>
+                        <button class="delete-button" type="button"
+                                data-product="Sugar">▤ Delete</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="stock">
-                    <span>Stock:</span>
-                    <strong>38 lb</strong>
-                </div>
+                <!-- RICE -->
+                <article class="product-card" data-search="rice pantry">
+                    <div class="product-top">
+                        <div class="product-image rice-image">
+                            <img src="product%20images/arroz.jpg"
+                                 alt="Rice"
+                                 onerror="this.style.display='none'">
+                        </div>
 
-                <div class="product-actions">
-                    <button type="button">✎ Edit</button>
-                    <button type="button">🗑 Delete</button>
-                </div>
-            </article>
-
-            <!-- WHITE BREAD -->
-            <article class="product-card" data-search="white bread bakery">
-                <div class="product-top">
-                    <div class="product-image bread-image" role="img" aria-label="White bread illustration">
-                        🍞
-                    </div>
-
-                    <div class="product-info">
-                        <span class="category">Bakery</span>
-                        <h2>White Bread</h2>
-                        <strong class="price">B/. 1.50</strong>
-                    </div>
-                </div>
-
-                <div class="stock">
-                    <span>Stock:</span>
-                    <strong>12 Unit</strong>
-                </div>
-
-                <div class="product-actions">
-                    <button type="button">✎ Edit</button>
-                    <button type="button">🗑 Delete</button>
-                </div>
-            </article>
-
-            <!-- COCA COLA -->
-            <article class="product-card" data-search="coca cola drinks beverages">
-                <div class="product-top">
-                    <div class="product-image coke-image" role="img" aria-label="Drink illustration">
-                        🥤
+                        <div class="product-info">
+                            <span class="category">PANTRY</span>
+                            <h3>Rice</h3>
+                            <p class="price">B/. 0.95</p>
+                        </div>
                     </div>
 
-                    <div class="product-info">
-                        <span class="category">Beverages</span>
-                        <h2>Coca Cola 2L</h2>
-                        <strong class="price">B/. 2.10</strong>
-                    </div>
-                </div>
-
-                <div class="stock">
-                    <span>Stock:</span>
-                    <strong>20 Bottle</strong>
-                </div>
-
-                <div class="product-actions">
-                    <button type="button">✎ Edit</button>
-                    <button type="button">🗑 Delete</button>
-                </div>
-            </article>
-
-            <!-- EGGS -->
-            <article class="product-card" data-search="eggs dairy">
-                <div class="product-top">
-                    <div class="product-image eggs-image" role="img" aria-label="Eggs illustration">
-                        🥚
+                    <div class="stock-row">
+                        <span>Stock:</span>
+                        <strong>38 lb</strong>
                     </div>
 
-                    <div class="product-info">
-                        <span class="category">Dairy</span>
-                        <h2>Eggs (Dozen)</h2>
-                        <strong class="price">B/. 3.20</strong>
+                    <div class="product-actions">
+                        <button class="edit-button" type="button"
+                                data-product="Rice">✎ Edit</button>
+                        <button class="delete-button" type="button"
+                                data-product="Rice">▤ Delete</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="stock">
-                    <span>Stock:</span>
-                    <strong>15 Pack</strong>
-                </div>
+                <!-- WHITE BREAD -->
+                <article class="product-card" data-search="white bread bakery">
+                    <div class="product-top">
+                        <div class="product-image bread-image">
+                            <img src="product%20images/pan.jpg"
+                                 alt="White bread"
+                                 onerror="this.style.display='none'">
+                        </div>
 
-                <div class="product-actions">
-                    <button type="button">✎ Edit</button>
-                    <button type="button">🗑 Delete</button>
-                </div>
-            </article>
+                        <div class="product-info">
+                            <span class="category">BAKERY</span>
+                            <h3>White Bread</h3>
+                            <p class="price">B/. 1.50</p>
+                        </div>
+                    </div>
 
-            <!-- ADD PRODUCT -->
-            <article class="add-product" id="addProduct" tabindex="0">
-                <div class="plus">+</div>
-                <h2>Add New Product</h2>
-                <p>Create a new item</p>
-            </article>
+                    <div class="stock-row">
+                        <span>Stock:</span>
+                        <strong>12 Unit</strong>
+                    </div>
+
+                    <div class="product-actions">
+                        <button class="edit-button" type="button"
+                                data-product="White Bread">✎ Edit</button>
+                        <button class="delete-button" type="button"
+                                data-product="White Bread">▤ Delete</button>
+                    </div>
+                </article>
+
+                <!-- COCA COLA -->
+                <article class="product-card" data-search="coca cola beverage drinks">
+                    <div class="product-top">
+                        <div class="product-image coca-image">
+                            <img src="product%20images/coca.jpg"
+                                 alt="Coca Cola 2L"
+                                 onerror="this.style.display='none'">
+                        </div>
+
+                        <div class="product-info">
+                            <span class="category">BEVERAGES</span>
+                            <h3>Coca Cola 2L</h3>
+                            <p class="price">B/. 2.10</p>
+                        </div>
+                    </div>
+
+                    <div class="stock-row">
+                        <span>Stock:</span>
+                        <strong>20 Bottle</strong>
+                    </div>
+
+                    <div class="product-actions">
+                        <button class="edit-button" type="button"
+                                data-product="Coca Cola 2L">✎ Edit</button>
+                        <button class="delete-button" type="button"
+                                data-product="Coca Cola 2L">▤ Delete</button>
+                    </div>
+                </article>
+
+                <!-- EGGS -->
+                <article class="product-card" data-search="eggs dozen dairy">
+                    <div class="product-top">
+                        <div class="product-image eggs-image">
+                            <img src="product%20images/huevos.jpg"
+                                 alt="Eggs"
+                                 onerror="this.style.display='none'">
+                        </div>
+
+                        <div class="product-info">
+                            <span class="category">DAIRY</span>
+                            <h3>Eggs (Dozen)</h3>
+                            <p class="price">B/. 3.20</p>
+                        </div>
+                    </div>
+
+                    <div class="stock-row">
+                        <span>Stock:</span>
+                        <strong>15 Pack</strong>
+                    </div>
+
+                    <div class="product-actions">
+                        <button class="edit-button" type="button"
+                                data-product="Eggs (Dozen)">✎ Edit</button>
+                        <button class="delete-button" type="button"
+                                data-product="Eggs (Dozen)">▤ Delete</button>
+                    </div>
+                </article>
+
+                <!-- ADD PRODUCT -->
+                <button class="add-product-card" id="addProductBtn" type="button">
+                    <span class="add-icon">+</span>
+                    <h3>Add New Product</h3>
+                    <p>Create a new item</p>
+                </button>
+
+            </div>
 
             <p class="no-results" id="noResults" hidden>
-                No products found.
+                No products found. Try another search.
             </p>
-
         </section>
+
+        <footer class="page-footer">
+            <p>© 2026 FIA'O. Inventory Management System.</p>
+        </footer>
+
     </main>
 
-    <!-- SEARCH AND DARK MODE -->
     <script>
+        // Search products
         const searchInput = document.getElementById("productSearch");
         const productCards = document.querySelectorAll(".product-card");
         const noResults = document.getElementById("noResults");
-        const addProduct = document.getElementById("addProduct");
-        const darkModeButton = document.querySelector(".dark-mode");
+        const productCount = document.getElementById("productCount");
+        const totalProducts = document.getElementById("totalProducts");
 
-        searchInput.addEventListener("input", function () {
-            const searchTerm = this.value.trim().toLowerCase();
-            let visibleProducts = 0;
+        function filterProducts() {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            let visibleCount = 0;
 
-            productCards.forEach(function (card) {
-                const searchableText = card.dataset.search.toLowerCase();
+            productCards.forEach(card => {
+                const searchableText =
+                    (card.dataset.search + " " + card.innerText).toLowerCase();
+
                 const matches = searchableText.includes(searchTerm);
-
                 card.hidden = !matches;
 
-                if (matches) {
-                    visibleProducts++;
-                }
+                if (matches) visibleCount++;
             });
 
-            noResults.hidden = visibleProducts !== 0;
-            addProduct.hidden = searchTerm.length > 0;
-        });
+            noResults.hidden = visibleCount !== 0;
+            productCount.textContent =
+                visibleCount + (visibleCount === 1 ? " product" : " products");
+        }
 
-        darkModeButton.addEventListener("click", function () {
+        searchInput.addEventListener("input", filterProducts);
+        totalProducts.textContent = productCards.length;
+
+        // Dark mode
+        const darkModeBtn = document.getElementById("darkModeBtn");
+
+        darkModeBtn.addEventListener("click", () => {
             document.body.classList.toggle("dark-theme");
 
-            const darkModeEnabled =
-                document.body.classList.contains("dark-theme");
-
-            darkModeButton.textContent = darkModeEnabled ? "☀️" : "🌙";
-            darkModeButton.setAttribute(
+            const isDark = document.body.classList.contains("dark-theme");
+            darkModeBtn.textContent = isDark ? "☀" : "☾";
+            darkModeBtn.setAttribute(
                 "aria-label",
-                darkModeEnabled ? "Toggle light mode" : "Toggle dark mode"
+                isDark ? "Switch to light mode" : "Switch to dark mode"
             );
         });
 
-        addProduct.addEventListener("click", function () {
-            alert("The option to add a new product will be available soon.");
+        // Demo buttons
+        document.querySelectorAll(".edit-button").forEach(button => {
+            button.addEventListener("click", () => {
+                alert("Editing " + button.dataset.product +
+                      " will be available soon.");
+            });
         });
 
-        addProduct.addEventListener("keydown", function (event) {
-            if (event.key === "Enter" || event.key === " ") {
-                event.preventDefault();
-                addProduct.click();
-            }
+        document.querySelectorAll(".delete-button").forEach(button => {
+            button.addEventListener("click", () => {
+                alert("Deleting " + button.dataset.product +
+                      " will be available soon.");
+            });
+        });
+
+        document.getElementById("addProductBtn").addEventListener("click", () => {
+            alert("The Add New Product feature will be available soon.");
         });
     </script>
+
 </body>
 </html>
