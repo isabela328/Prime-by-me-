@@ -1,4 +1,5 @@
 
+
 /* =========================================
    FIA'O - CLIENTS
    ========================================= */
@@ -38,20 +39,21 @@ body {
 }
 
 /* =========================================
-   NAVBAR - MATCHES INDEX AND PRODUCTS
+   NAVBAR - UNIFORME EN TODAS LAS PÁGINAS
    ========================================= */
 
 .navbar {
-    width: 100%;
-    min-height: 76px;
-    margin: 0;
-    padding: 14px clamp(20px, 5%, 72px);
+    width: 88%;
+    min-height: 99px;
+    margin: 34px auto 45px;
+    padding: 22px 36px;
     background: #bd292d;
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 24px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
     position: relative;
     z-index: 10;
 }
@@ -60,7 +62,7 @@ body {
     flex-shrink: 0;
     color: #ffffff;
     text-decoration: none;
-    font-size: clamp(27px, 2.5vw, 34px);
+    font-size: clamp(34px, 2.5vw, 44px);
     font-weight: 800;
     letter-spacing: -2px;
     line-height: 1.2;
@@ -75,22 +77,22 @@ body {
     align-items: center;
     justify-content: flex-end;
     flex-wrap: wrap;
-    gap: clamp(8px, 1.2vw, 18px);
+    gap: clamp(12px, 2.2vw, 30px);
 }
 
 .nav-links a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 9px clamp(10px, 1.2vw, 17px);
+    padding: 12px clamp(18px, 1.6vw, 28px);
     background: #ffd21c;
-    color: #a7191e;
+    color: #111111;
     text-decoration: none;
     text-align: center;
     white-space: nowrap;
-    font-size: 12px;
-    font-weight: bold;
-    border-radius: 22px;
+    font-size: clamp(15px, 1.15vw, 20px);
+    font-weight: 400;
+    border-radius: 28px;
     transition: background 0.2s ease, transform 0.2s ease;
 }
 
@@ -540,18 +542,23 @@ body {
 
 @media (max-width: 1000px) {
     .navbar {
-        padding-right: 24px;
-        padding-left: 24px;
-        gap: 16px;
+        width: 92%;
+        margin-top: 50px;
+        margin-bottom: 35px;
+        padding: 20px 26px;
+    }
+
+    .logo {
+        font-size: 34px;
     }
 
     .nav-links {
-        gap: 8px;
+        gap: 10px;
     }
 
     .nav-links a {
-        padding: 8px 10px;
-        font-size: 11px;
+        padding: 9px 13px;
+        font-size: 14px;
     }
 }
 
@@ -560,29 +567,6 @@ body {
    ========================================= */
 
 @media (max-width: 850px) {
-    .navbar {
-        min-height: auto;
-        padding: 18px 20px;
-        flex-direction: column;
-        gap: 16px;
-    }
-
-    .logo {
-        font-size: 31px;
-    }
-
-    .nav-links {
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 8px;
-    }
-
-    .nav-links a {
-        padding: 8px 12px;
-        font-size: 11px;
-    }
-
     .page {
         padding: 30px 20px 40px;
     }
@@ -606,24 +590,40 @@ body {
 }
 
 /* =========================================
+   NAVBAR - MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+    .navbar {
+        width: 92%;
+        margin: 24px auto 28px;
+        padding: 18px 16px;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .logo {
+        font-size: 34px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .nav-links a {
+        padding: 9px 13px;
+        font-size: 13px;
+    }
+}
+
+/* =========================================
    MOBILE
    ========================================= */
 
 @media (max-width: 550px) {
-    .navbar {
-        padding: 18px 12px;
-        gap: 14px;
-    }
-
-    .nav-links {
-        gap: 7px;
-    }
-
-    .nav-links a {
-        padding: 8px 10px;
-        font-size: 11px;
-    }
-
     .page {
         padding: 25px 12px 30px;
     }
@@ -736,8 +736,8 @@ body {
 
 @media (max-width: 380px) {
     .navbar {
-        padding-right: 10px;
-        padding-left: 10px;
+        width: 94%;
+        padding: 16px 10px;
     }
 
     .nav-links {
@@ -745,8 +745,8 @@ body {
     }
 
     .nav-links a {
-        padding: 7px 9px;
-        font-size: 10px;
+        padding: 7px 10px;
+        font-size: 12px;
     }
 
     .page {

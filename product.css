@@ -1,3 +1,4 @@
+
 /* ========================================
    FIA'O - PRODUCTS PAGE
    ======================================== */
@@ -51,20 +52,21 @@ button {
 }
 
 /* ========================================
-   NAVBAR
+   NAVBAR - DISEÑO UNIFORME FIA'O
    ======================================== */
 
 .navbar {
-    width: 100%;
-    min-height: 76px;
-    margin: 0;
-    padding: 14px clamp(20px, 5%, 72px);
+    width: 88%;
+    min-height: 99px;
+    margin: 34px auto 45px;
+    padding: 22px 36px;
     background: var(--red);
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 24px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
     position: relative;
     z-index: 10;
 }
@@ -73,7 +75,7 @@ button {
     flex-shrink: 0;
     color: var(--white);
     text-decoration: none;
-    font-size: clamp(27px, 2.5vw, 34px);
+    font-size: clamp(34px, 2.5vw, 44px);
     font-weight: 800;
     letter-spacing: -2px;
 }
@@ -87,22 +89,22 @@ button {
     align-items: center;
     justify-content: flex-end;
     flex-wrap: wrap;
-    gap: clamp(8px, 1.2vw, 18px);
+    gap: clamp(12px, 2.2vw, 30px);
 }
 
 .nav-links a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 9px clamp(10px, 1.2vw, 17px);
+    padding: 12px clamp(18px, 1.6vw, 28px);
     background: var(--yellow);
-    color: var(--red-dark);
+    color: #111111;
     text-decoration: none;
     text-align: center;
     white-space: nowrap;
-    font-size: 12px;
-    font-weight: 700;
-    border-radius: 22px;
+    font-size: clamp(15px, 1.15vw, 20px);
+    font-weight: 400;
+    border-radius: 28px;
     transition: background 0.2s ease, transform 0.2s ease;
 }
 
@@ -113,8 +115,10 @@ button {
 
 .nav-links a.active {
     background: var(--yellow);
-    color: var(--red-dark);
+    color: #111111;
 }
+
+/* BOTÓN MODO OSCURO */
 
 .dark-mode {
     width: 40px;
@@ -414,8 +418,6 @@ button {
     border-radius: inherit;
 }
 
-/* Individual product backgrounds */
-
 .sugar-image {
     background: #fff0d2;
 }
@@ -642,7 +644,7 @@ body.dark-theme {
 
 .dark-theme .nav-links a {
     background: var(--yellow);
-    color: var(--red-dark);
+    color: #111111;
 }
 
 .dark-theme .nav-links a:hover {
@@ -715,25 +717,25 @@ body.dark-theme {
    RESPONSIVE NAVBAR
    ======================================== */
 
-@media (max-width: 1100px) {
+@media (max-width: 1000px) {
     .navbar {
-        padding-right: 24px;
-        padding-left: 24px;
-        gap: 16px;
+        width: 92%;
+        margin-top: 50px;
+        margin-bottom: 35px;
+        padding: 20px 26px;
+    }
+
+    .logo {
+        font-size: 34px;
     }
 
     .nav-links {
-        gap: 8px;
+        gap: 10px;
     }
 
     .nav-links a {
-        padding: 8px 10px;
-        font-size: 11px;
-    }
-
-    .dark-mode {
-        width: 36px;
-        height: 36px;
+        padding: 9px 13px;
+        font-size: 14px;
     }
 }
 
@@ -786,15 +788,17 @@ body.dark-theme {
 
 @media (max-width: 700px) {
     .navbar {
+        width: 92%;
         min-height: auto;
+        margin: 24px auto 28px;
         padding: 18px 16px;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 16px;
     }
 
     .logo {
-        font-size: 31px;
+        font-size: 34px;
     }
 
     .nav-links {
@@ -808,12 +812,12 @@ body.dark-theme {
     }
 
     .nav-links a {
-        padding: 8px 12px;
-        font-size: 11px;
+        padding: 9px 13px;
+        font-size: 13px;
     }
 
     .dark-mode {
-        margin-left: auto;
+        margin-left: 0;
     }
 
     .page-container {
@@ -912,8 +916,8 @@ body.dark-theme {
 
 @media (max-width: 380px) {
     .navbar {
-        padding-right: 10px;
-        padding-left: 10px;
+        width: 94%;
+        padding: 16px 10px;
     }
 
     .nav-links {
@@ -921,8 +925,8 @@ body.dark-theme {
     }
 
     .nav-links a {
-        padding: 7px 9px;
-        font-size: 10px;
+        padding: 7px 10px;
+        font-size: 12px;
     }
 
     .page-container {
