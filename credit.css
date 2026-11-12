@@ -1,14 +1,13 @@
-
 /* =========================================================
    CONFIGURACIÓN GENERAL
 ========================================================= */
-
+ 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
+ 
 :root {
     --red: #c51d22;
     --dark-red: #a7191e;
@@ -18,13 +17,13 @@
     --brown: #4a2c23;
     --green: #18a85b;
 }
-
+ 
 html {
     width: 100%;
     min-width: 320px;
     scroll-behavior: smooth;
 }
-
+ 
 body {
     width: 100%;
     min-width: 320px;
@@ -34,46 +33,65 @@ body {
     color: var(--brown);
     overflow-x: hidden;
 }
-
+ 
 button,
 input {
     font: inherit;
 }
-
+ 
 button {
     cursor: pointer;
 }
-
+ 
 img {
     display: block;
     max-width: 100%;
 }
-
-
+ 
+ 
+/* =========================================================
+   ICONOS SVG
+========================================================= */
+ 
+.icon {
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    display: inline-block;
+    vertical-align: middle;
+ 
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+ 
+ 
 /* =========================================================
    NAVBAR - DISEÑO UNIFORME FIA'O
 ========================================================= */
-
+ 
 .navbar {
     width: 88%;
     min-height: 99px;
     margin: 34px auto 45px;
     padding: 22px 36px;
-
+ 
     background: #bd292d;
     border-radius: 16px;
-
+ 
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 24px;
-
+ 
     box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
-
+ 
     position: relative;
     z-index: 10;
 }
-
+ 
 .logo {
     flex-shrink: 0;
     color: #ffffff;
@@ -84,11 +102,11 @@ img {
     text-decoration: none;
     white-space: nowrap;
 }
-
+ 
 .logo span {
     color: #ffd21c;
 }
-
+ 
 .nav-links {
     display: flex;
     align-items: center;
@@ -96,132 +114,138 @@ img {
     flex-wrap: wrap;
     gap: clamp(12px, 2.2vw, 30px);
 }
-
+ 
 .nav-links a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: 12px clamp(18px, 1.6vw, 28px);
-
+ 
     background: #ffd21c;
     color: #111111;
     text-decoration: none;
     text-align: center;
     white-space: nowrap;
-
+ 
     font-size: clamp(15px, 1.15vw, 20px);
     font-weight: 400;
     border-radius: 28px;
-
+ 
     transition: background 0.2s ease, transform 0.2s ease;
 }
-
+ 
 .nav-links a:hover {
     background: #ffffff;
     transform: translateY(-2px);
 }
-
-
+ 
+ 
 /* =========================================================
    BARRA SECUNDARIA
 ========================================================= */
-
+ 
 .secondary-bar {
     width: 100%;
     min-height: 76px;
     padding: 12px clamp(20px, 5%, 72px);
-
+ 
     background: var(--dark-red);
     border-bottom: 3px solid var(--yellow);
-
+ 
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
-
+ 
 .secondary-actions {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 12px;
 }
-
+ 
 .action-button {
     position: relative;
     height: 44px;
     min-width: 48px;
     padding: 0 10px;
-
+ 
     background: #ffffff;
     border: 2px solid var(--yellow);
     border-radius: 12px;
-
+ 
+    color: var(--dark-red);
     font-size: 20px;
-
+ 
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 7px;
-
+ 
     transition: background 0.2s ease;
 }
-
+ 
 .action-button:hover {
     background: var(--cream-light);
 }
-
+ 
 .language-button {
     min-width: 75px;
     font-size: 16px;
     font-weight: bold;
 }
-
+ 
+.language-button .icon {
+    width: 20px;
+    height: 20px;
+}
+ 
 .notification-button {
     width: 50px;
 }
-
+ 
 .notification-number {
     position: absolute;
     top: -7px;
     right: -7px;
-
+ 
     width: 22px;
     height: 22px;
-
+ 
     border-radius: 50%;
     background: #ff9f00;
     color: white;
-
+ 
     font-size: 12px;
     font-weight: bold;
-
+ 
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
-
+ 
+ 
 /* =========================================================
    CONTENEDOR PRINCIPAL
 ========================================================= */
-
+ 
 .credit-page {
     width: 100%;
     max-width: 1800px;
     min-height: calc(100vh - 152px);
     margin: 0 auto;
-
+ 
     padding: clamp(32px, 4.5vw, 64px)
              clamp(20px, 4.5vw, 72px)
              70px;
-
+ 
     background: var(--red);
 }
-
+ 
 .credit-header {
     margin-bottom: clamp(25px, 3vw, 40px);
 }
-
+ 
 .credit-header h1 {
     color: #ffffff;
     font-size: clamp(34px, 3.6vw, 52px);
@@ -230,11 +254,11 @@ img {
     margin-bottom: 16px;
     overflow-wrap: anywhere;
 }
-
+ 
 .credit-header h1 span {
     color: var(--yellow);
 }
-
+ 
 .credit-header p {
     max-width: 800px;
     color: #ffe9c7;
@@ -242,23 +266,23 @@ img {
     line-height: 1.55;
     font-weight: 500;
 }
-
-
+ 
+ 
 /* =========================================================
    CUADRÍCULA PRINCIPAL
 ========================================================= */
-
+ 
 .dashboard-grid {
     display: grid;
     grid-template-columns:
         minmax(0, 0.95fr)
         minmax(0, 1.25fr)
         minmax(0, 0.95fr);
-
+ 
     gap: clamp(16px, 1.7vw, 25px);
     align-items: start;
 }
-
+ 
 .left-column,
 .center-column,
 .right-column {
@@ -267,147 +291,157 @@ img {
     flex-direction: column;
     gap: clamp(18px, 1.8vw, 26px);
 }
-
-
+ 
+ 
 /* =========================================================
    PANELES GENERALES
 ========================================================= */
-
+ 
 .panel {
     min-width: 0;
     width: 100%;
-
+ 
     background: var(--cream);
     border: 2px solid #ffb51b;
     border-radius: 20px;
-
+ 
     padding: clamp(18px, 2vw, 28px);
-
+ 
     box-shadow: 0 3px 0 rgba(140, 45, 20, 0.08);
 }
-
-
+ 
+ 
 /* =========================================================
    SELECTOR DE CLIENTE
 ========================================================= */
-
+ 
 .customer-selector h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+ 
     font-size: clamp(17px, 1.4vw, 21px);
     line-height: 1.35;
     margin-bottom: 18px;
 }
-
+ 
+.customer-selector h2 .icon {
+    width: 1.15em;
+    height: 1.15em;
+    color: var(--red);
+}
+ 
 .customer-select {
     width: 100%;
     min-height: 58px;
     padding: 12px 16px;
-
+ 
     background: #ffffff;
     border: 2px solid #ffb52a;
     border-radius: 14px;
-
+ 
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
-
+ 
     font-size: clamp(15px, 1.2vw, 18px);
     overflow-wrap: anywhere;
 }
-
+ 
 .customer-select span {
     font-size: 24px;
     flex-shrink: 0;
 }
-
-
+ 
+ 
 /* =========================================================
    TARJETA DEL CLIENTE
 ========================================================= */
-
+ 
 .customer-card {
     padding: clamp(20px, 2.2vw, 32px);
 }
-
+ 
 .customer-title {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: 12px;
-
+ 
     font-size: clamp(21px, 1.8vw, 28px);
     line-height: 1.3;
     margin-bottom: 25px;
     overflow-wrap: anywhere;
 }
-
+ 
 .customer-icon {
     width: 30px;
     height: 30px;
     flex-shrink: 0;
-
+ 
     background: var(--red);
     color: #ffffff;
     border-radius: 50%;
-
+ 
     display: flex;
     align-items: center;
     justify-content: center;
-
+ 
     font-size: 13px;
 }
-
-
+ 
+ 
 /* =========================================================
    ESTADÍSTICAS DEL CLIENTE
 ========================================================= */
-
+ 
 .customer-stats {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
 }
-
+ 
 .stat-box {
     min-width: 0;
     min-height: 105px;
     padding: 17px 14px;
-
+ 
     background: #ffffff;
     border: 1px solid #ffb52a;
     border-radius: 14px;
-
+ 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 14px;
 }
-
+ 
 .stat-box span {
     font-size: clamp(12px, 1vw, 15px);
     font-weight: bold;
     line-height: 1.4;
 }
-
+ 
 .stat-box strong {
     font-size: clamp(19px, 1.8vw, 27px);
     line-height: 1.2;
     overflow-wrap: anywhere;
 }
-
+ 
 .red-text {
     color: var(--red);
 }
-
-
+ 
+ 
 /* =========================================================
    BARRA DE PROGRESO
 ========================================================= */
-
+ 
 .credit-progress {
     margin-top: 25px;
 }
-
+ 
 .progress-bar {
     width: 100%;
     height: 12px;
@@ -415,30 +449,30 @@ img {
     border-radius: 20px;
     overflow: hidden;
 }
-
+ 
 .progress-value {
     width: 35%;
     height: 100%;
     background: var(--red);
     border-radius: 20px;
 }
-
+ 
 .progress-info {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 8px;
-
+ 
     margin-top: 12px;
     font-size: clamp(12px, 1vw, 15px);
     line-height: 1.4;
 }
-
-
+ 
+ 
 /* =========================================================
    BLOQUEO AUTOMÁTICO
 ========================================================= */
-
+ 
 .automatic-block {
     min-height: 125px;
     display: flex;
@@ -446,27 +480,37 @@ img {
     justify-content: space-between;
     gap: 16px;
 }
-
+ 
 .block-content {
     min-width: 0;
 }
-
+ 
 .block-content h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+ 
     font-size: clamp(17px, 1.4vw, 21px);
     line-height: 1.35;
     margin-bottom: 10px;
 }
-
+ 
+.block-content h2 .icon {
+    width: 1.15em;
+    height: 1.15em;
+    color: var(--red);
+}
+ 
 .block-content p {
     font-size: clamp(13px, 1.05vw, 16px);
     line-height: 1.5;
 }
-
-
+ 
+ 
 /* =========================================================
    INTERRUPTOR
 ========================================================= */
-
+ 
 .switch {
     position: relative;
     display: inline-block;
@@ -474,24 +518,24 @@ img {
     height: 29px;
     flex-shrink: 0;
 }
-
+ 
 .switch input {
     position: absolute;
     opacity: 0;
     width: 0;
     height: 0;
 }
-
+ 
 .slider {
     position: absolute;
     inset: 0;
     cursor: pointer;
-
+ 
     background: #dddddd;
     border-radius: 30px;
     transition: background 0.3s ease;
 }
-
+ 
 .slider:before {
     content: "";
     position: absolute;
@@ -499,30 +543,30 @@ img {
     height: 23px;
     left: 3px;
     top: 3px;
-
+ 
     background: #ffffff;
     border-radius: 50%;
     transition: transform 0.3s ease;
 }
-
+ 
 .switch input:checked + .slider {
     background: var(--red);
 }
-
+ 
 .switch input:checked + .slider:before {
     transform: translateX(23px);
 }
-
+ 
 .switch input:focus-visible + .slider {
     outline: 3px solid #333333;
     outline-offset: 3px;
 }
-
-
+ 
+ 
 /* =========================================================
    TÍTULOS Y DESCRIPCIONES
 ========================================================= */
-
+ 
 .debt-history h2,
 .register-payment h2,
 .recent-activity h2,
@@ -531,26 +575,26 @@ img {
     line-height: 1.3;
     margin-bottom: 10px;
 }
-
+ 
 .panel-description {
     color: #75432b;
     font-size: clamp(14px, 1.1vw, 16px);
     line-height: 1.5;
     margin-bottom: 22px;
 }
-
-
+ 
+ 
 /* =========================================================
    HISTORIAL DE DEUDAS
 ========================================================= */
-
+ 
 .debt-history,
 .register-payment,
 .recent-activity,
 .debt-overview {
     padding: clamp(18px, 2vw, 28px);
 }
-
+ 
 .history-list {
     width: 100%;
     max-height: 405px;
@@ -558,111 +602,112 @@ img {
     overflow-x: hidden;
     padding-right: 4px;
 }
-
+ 
 .history-list::-webkit-scrollbar {
     width: 7px;
 }
-
+ 
 .history-list::-webkit-scrollbar-track {
     background: #eeeeee;
     border-radius: 10px;
 }
-
+ 
 .history-list::-webkit-scrollbar-thumb {
     background: #999999;
     border-radius: 10px;
 }
-
+ 
 .history-item {
     width: 100%;
     min-width: 0;
     min-height: 78px;
     margin-bottom: 12px;
     padding: 12px;
-
+ 
     background: #ffffff;
     border: 1px solid #ffb52a;
     border-radius: 14px;
-
+ 
     display: grid;
     grid-template-columns: 42px 38px minmax(0, 1fr);
     align-items: center;
     gap: 10px;
 }
-
+ 
 .date-box {
     width: 42px;
     height: 48px;
-
+ 
     border: 1px solid #ffb52a;
     border-radius: 10px;
-
+ 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-
+ 
 .date-box strong {
     font-size: 18px;
 }
-
+ 
 .date-box span {
     font-size: 10px;
     font-weight: bold;
 }
-
+ 
 .history-icon {
     width: 36px;
     height: 36px;
-
+ 
     border-radius: 50%;
     background: #fff2c4;
     border: 1px solid #ffb52a;
-
+    color: var(--red);
+ 
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 18px;
 }
-
+ 
 .history-icon.payment {
     color: var(--green);
 }
-
+ 
 .history-product {
     min-width: 0;
     display: flex;
     flex-direction: column;
     gap: 4px;
 }
-
+ 
 .history-product strong {
     font-size: clamp(13px, 1.1vw, 16px);
     line-height: 1.35;
     overflow-wrap: anywhere;
 }
-
+ 
 .history-product span {
     font-size: 13px;
     line-height: 1.3;
 }
-
+ 
 .history-amount,
 .payment-amount {
     grid-column: 3;
     white-space: nowrap;
     font-size: clamp(14px, 1.1vw, 17px);
 }
-
+ 
 .history-amount {
     color: var(--red);
 }
-
+ 
 .payment-amount {
     color: var(--green);
 }
-
+ 
 .pending,
 .paid {
     grid-column: 3;
@@ -673,39 +718,39 @@ img {
     font-weight: bold;
     white-space: nowrap;
 }
-
+ 
 .pending {
     background: #fff08b;
     color: #76510a;
 }
-
+ 
 .paid {
     background: #d4f7e2;
     color: #149450;
 }
-
+ 
 .view-history,
 .view-activity {
     display: inline-block;
     margin-top: 8px;
-
+ 
     color: var(--red);
     font-size: 15px;
     font-weight: bold;
     line-height: 1.5;
     text-decoration: none;
 }
-
+ 
 .view-history:hover,
 .view-activity:hover {
     text-decoration: underline;
 }
-
-
+ 
+ 
 /* =========================================================
    REGISTRAR PAGO
 ========================================================= */
-
+ 
 .register-payment > label,
 .field-label {
     display: block;
@@ -713,150 +758,155 @@ img {
     font-weight: bold;
     margin-bottom: 10px;
 }
-
+ 
 .payment-input {
     width: 100%;
     min-height: 58px;
     padding: 12px 16px;
     margin-bottom: 22px;
-
+ 
     background: #ffffff;
     border: 2px solid #ffb52a;
     border-radius: 12px;
-
+ 
     display: flex;
     align-items: center;
-
+ 
     font-size: clamp(18px, 1.5vw, 22px);
     font-weight: bold;
     color: #777777;
 }
-
+ 
 .payment-types {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
     margin-bottom: 24px;
 }
-
+ 
 .payment-option {
     min-width: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-
+ 
     text-align: center;
     font-size: clamp(12px, 1vw, 15px);
     font-weight: bold;
     line-height: 1.4;
 }
-
+ 
 .payment-option input {
     width: 18px;
     height: 18px;
     accent-color: #168cf0;
 }
-
+ 
 .payment-buttons {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
 }
-
+ 
 .payment-buttons button {
     min-width: 0;
     min-height: 52px;
     padding: 10px 12px;
     border-radius: 12px;
-
+ 
     font-size: clamp(12px, 1vw, 15px);
     font-weight: bold;
     line-height: 1.35;
-
+ 
     transition: background 0.2s ease, transform 0.2s ease;
 }
-
+ 
 .payment-buttons button:hover {
     transform: translateY(-1px);
 }
-
+ 
 .register-button {
     background: #ffb72b;
     border: 2px solid #e9a00e;
     color: #3d2b22;
 }
-
+ 
 .register-button:hover {
     background: #ffc53f;
 }
-
+ 
 .paid-button {
     background: #ffffff;
     border: 2px solid #ffb52a;
     color: var(--brown);
 }
-
+ 
 .paid-button:hover {
     background: #fff9e8;
 }
-
-
+ 
+ 
 /* =========================================================
    ACTIVIDAD RECIENTE
 ========================================================= */
-
+ 
 .activity-list {
     margin-top: 12px;
 }
-
+ 
 .activity-item {
     min-width: 0;
     min-height: 80px;
     padding: 12px 0;
-
+ 
     display: grid;
     grid-template-columns: 40px minmax(0, 1fr);
     align-items: center;
     gap: 12px;
-
+ 
     border-bottom: 1px solid #e1c99c;
 }
-
+ 
 .activity-icon {
     width: 38px;
     height: 38px;
-
+ 
     border-radius: 50%;
     border: 1px solid #ffb52a;
     background: #ffffff;
-
+    color: var(--red);
+ 
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 17px;
 }
-
+ 
+.activity-icon.green {
+    color: var(--green);
+}
+ 
 .activity-info {
     min-width: 0;
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
-
+ 
 .activity-info strong {
     font-size: clamp(13px, 1.05vw, 16px);
     line-height: 1.35;
     overflow-wrap: anywhere;
 }
-
+ 
 .activity-info span {
     color: #75432b;
     font-size: clamp(12px, 0.95vw, 14px);
     line-height: 1.4;
     overflow-wrap: anywhere;
 }
-
+ 
 .activity-time {
     grid-column: 2;
     display: flex;
@@ -864,7 +914,7 @@ img {
     gap: 7px;
     font-size: 12px;
 }
-
+ 
 .green-dot,
 .yellow-dot {
     width: 10px;
@@ -872,94 +922,94 @@ img {
     border-radius: 50%;
     flex-shrink: 0;
 }
-
+ 
 .green-dot {
     background: #18aa5d;
 }
-
+ 
 .yellow-dot {
     background: #d79500;
 }
-
-
+ 
+ 
 /* =========================================================
    RESUMEN DE DEUDAS
 ========================================================= */
-
+ 
 .overview-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
     margin-top: 20px;
 }
-
+ 
 .overview-box {
     min-width: 0;
     min-height: 95px;
     padding: 14px;
-
+ 
     background: #ffffff;
     border: 1px solid #ffb52a;
     border-radius: 13px;
-
+ 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 12px;
 }
-
+ 
 .overview-box span {
     font-size: clamp(12px, 0.95vw, 14px);
     font-weight: bold;
     line-height: 1.4;
 }
-
+ 
 .overview-box strong {
     color: var(--red);
     font-size: clamp(20px, 1.7vw, 26px);
     line-height: 1.25;
     overflow-wrap: anywhere;
 }
-
-
+ 
+ 
 /* =========================================================
    TABLETAS Y PORTÁTILES
 ========================================================= */
-
+ 
 @media (max-width: 1200px) {
     .credit-page {
         padding-left: 25px;
         padding-right: 25px;
     }
-
+ 
     .dashboard-grid {
         grid-template-columns:
             minmax(0, 1fr)
             minmax(0, 1.15fr);
         gap: 20px;
     }
-
+ 
     .right-column {
         grid-column: 1 / -1;
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         align-items: start;
     }
-
+ 
     .right-column > .panel {
         height: fit-content;
     }
-
+ 
     .history-item {
         grid-template-columns: 42px 36px minmax(0, 1fr);
     }
 }
-
-
+ 
+ 
 /* =========================================================
    TABLETAS Y NAVBAR RESPONSIVE
 ========================================================= */
-
+ 
 @media (max-width: 1000px) {
     .navbar {
         width: 92%;
@@ -967,47 +1017,47 @@ img {
         margin-bottom: 35px;
         padding: 20px 26px;
     }
-
+ 
     .logo {
         font-size: 34px;
     }
-
+ 
     .nav-links {
         gap: 10px;
     }
-
+ 
     .nav-links a {
         padding: 9px 13px;
         font-size: 14px;
     }
 }
-
+ 
 @media (max-width: 850px) {
     .navbar {
         flex-direction: column;
         justify-content: center;
         gap: 16px;
     }
-
+ 
     .nav-links {
         width: 100%;
         justify-content: center;
     }
-
+ 
     .secondary-bar {
         min-height: 65px;
         padding: 10px 20px;
     }
-
+ 
     .credit-page {
         padding: 35px 20px 50px;
     }
-
+ 
     .dashboard-grid {
         grid-template-columns: minmax(0, 1fr);
         gap: 20px;
     }
-
+ 
     .left-column,
     .center-column,
     .right-column {
@@ -1016,36 +1066,36 @@ img {
         flex-direction: column;
         gap: 20px;
     }
-
+ 
     .panel {
         padding: 22px;
     }
-
+ 
     .history-item {
         grid-template-columns: 45px 40px minmax(0, 1fr) auto;
     }
-
+ 
     .history-amount,
     .payment-amount,
     .pending,
     .paid {
         grid-column: auto;
     }
-
+ 
     .activity-item {
         grid-template-columns: 42px minmax(0, 1fr) auto;
     }
-
+ 
     .activity-time {
         grid-column: auto;
     }
 }
-
-
+ 
+ 
 /* =========================================================
    MÓVILES
 ========================================================= */
-
+ 
 @media (max-width: 700px) {
     .navbar {
         width: 92%;
@@ -1055,69 +1105,74 @@ img {
         flex-direction: column;
         gap: 16px;
     }
-
+ 
     .logo {
         font-size: 34px;
     }
-
+ 
     .nav-links {
         width: 100%;
         justify-content: center;
         flex-wrap: wrap;
         gap: 8px;
     }
-
+ 
     .nav-links a {
         padding: 9px 13px;
         font-size: 13px;
     }
 }
-
+ 
 @media (max-width: 550px) {
     .secondary-bar {
         min-height: 60px;
         padding: 8px 15px;
     }
-
+ 
     .secondary-actions {
         gap: 8px;
     }
-
+ 
     .action-button {
         height: 40px;
         min-width: 43px;
         border-radius: 10px;
         font-size: 18px;
     }
-
+ 
+    .language-button .icon {
+        width: 18px;
+        height: 18px;
+    }
+ 
     .notification-button {
         width: 43px;
     }
-
+ 
     .language-button {
         min-width: 65px;
         font-size: 14px;
     }
-
+ 
     .notification-number {
         width: 19px;
         height: 19px;
         font-size: 11px;
     }
-
+ 
     .credit-page {
         padding: 30px 12px 40px;
     }
-
+ 
     .credit-header h1 {
         font-size: clamp(30px, 8vw, 38px);
         margin-bottom: 12px;
     }
-
+ 
     .credit-header p {
         font-size: 15px;
     }
-
+ 
     .panel,
     .customer-card,
     .debt-history,
@@ -1127,74 +1182,74 @@ img {
         padding: 17px;
         border-radius: 17px;
     }
-
+ 
     .customer-title {
         font-size: 22px;
         margin-bottom: 20px;
     }
-
+ 
     .customer-stats {
         gap: 10px;
     }
-
+ 
     .stat-box {
         min-height: 95px;
         padding: 13px 10px;
     }
-
+ 
     .stat-box span {
         font-size: 12px;
     }
-
+ 
     .stat-box strong {
         font-size: clamp(17px, 4.5vw, 22px);
     }
-
+ 
     .progress-info {
         font-size: 12px;
     }
-
+ 
     .automatic-block {
         align-items: flex-start;
         gap: 12px;
     }
-
+ 
     .block-content h2 {
         font-size: 17px;
     }
-
+ 
     .block-content p {
         font-size: 13px;
     }
-
+ 
     .history-item {
         grid-template-columns: 40px minmax(0, 1fr);
         gap: 10px;
         padding: 12px;
     }
-
+ 
     .date-box {
         grid-row: span 3;
         width: 40px;
         height: 46px;
     }
-
+ 
     .history-icon {
         display: none;
     }
-
+ 
     .history-product {
         grid-column: 2;
     }
-
+ 
     .history-product strong {
         font-size: 14px;
     }
-
+ 
     .history-product span {
         font-size: 12px;
     }
-
+ 
     .history-amount,
     .payment-amount,
     .pending,
@@ -1202,114 +1257,115 @@ img {
         grid-column: 2;
         justify-self: start;
     }
-
+ 
     .payment-types {
         gap: 8px;
     }
-
+ 
     .payment-option {
         font-size: 12px;
     }
-
+ 
     .payment-buttons {
         grid-template-columns: 1fr;
     }
-
+ 
     .payment-buttons button {
         min-height: 48px;
         font-size: 14px;
     }
-
+ 
     .activity-item {
         grid-template-columns: 38px minmax(0, 1fr);
         gap: 10px;
     }
-
+ 
     .activity-icon {
         width: 36px;
         height: 36px;
     }
-
+ 
     .activity-info strong {
         font-size: 14px;
     }
-
+ 
     .activity-info span {
         font-size: 12px;
     }
-
+ 
     .activity-time {
         grid-column: 2;
     }
-
+ 
     .overview-grid {
         gap: 10px;
     }
-
+ 
     .overview-box {
         min-height: 85px;
         padding: 12px;
     }
-
+ 
     .overview-box span {
         font-size: 12px;
     }
-
+ 
     .overview-box strong {
         font-size: 21px;
     }
 }
-
-
+ 
+ 
 /* =========================================================
    CELULARES PEQUEÑOS
 ========================================================= */
-
+ 
 @media (max-width: 380px) {
     .navbar {
         width: 94%;
         padding: 16px 10px;
     }
-
+ 
     .nav-links {
         gap: 6px;
     }
-
+ 
     .nav-links a {
         padding: 7px 10px;
         font-size: 12px;
     }
-
+ 
     .credit-page {
         padding-left: 9px;
         padding-right: 9px;
     }
-
+ 
     .customer-stats,
     .overview-grid {
         grid-template-columns: minmax(0, 1fr);
     }
-
+ 
     .stat-box {
         min-height: 80px;
     }
-
+ 
     .payment-types {
         grid-template-columns: minmax(0, 1fr);
     }
-
+ 
     .payment-option {
         flex-direction: row;
         justify-content: flex-start;
         text-align: left;
     }
-
+ 
     .history-item {
         padding: 10px;
         gap: 8px;
     }
-
+ 
     .overview-box {
         min-height: 75px;
     }
 }
+ 

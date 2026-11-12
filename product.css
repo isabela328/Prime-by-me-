@@ -52,7 +52,7 @@ button {
 }
 
 /* ========================================
-   NAVBAR - DISEÑO UNIFORME FIA'O
+   NAVBAR - IGUAL A REPORTS
    ======================================== */
 
 .navbar {
@@ -102,6 +102,7 @@ button {
     text-decoration: none;
     text-align: center;
     white-space: nowrap;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: clamp(15px, 1.15vw, 20px);
     font-weight: 400;
     border-radius: 28px;

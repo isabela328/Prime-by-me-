@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FIA'O - Reports</title>
     <link rel="stylesheet" href="reports.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </head>
@@ -17,12 +21,12 @@
         <div class="logo">FIA<span>'O</span></div>
 
         <nav>
-            <a href="index.html">Home</a>
-            <a href="credit.html">Credit</a>
-            <a href="products.html">Products</a>
-            <a href="client.html">Clients</a>
-            <a href="reports.html" class="active">Reports</a>
-            <a href="contact.html">Contact</a>
+            <a href="index.html" data-en="Home" data-es="Inicio">Home</a>
+            <a href="credit.html" data-en="Credit" data-es="Crédito">Credit</a>
+            <a href="products.html" data-en="Products" data-es="Productos">Products</a>
+            <a href="client.html" data-en="Clients" data-es="Clientes">Clients</a>
+            <a href="reports.html" class="active" data-en="Reports" data-es="Reportes">Reports</a>
+            <a href="contact.html" data-en="Contact" data-es="Contacto">Contact</a>
         </nav>
     </header>
 
@@ -33,37 +37,62 @@
             <div>
                 <div class="title-line">
                     <span class="chart-icon">◔</span>
-                    <h1>FIA'O Reports</h1>
-                    <button class="round-button" id="languageButton" title="Change language">A文</button>
-                    <button class="round-button" id="themeButton" title="Change theme">☾</button>
+
+                    <h1 data-en="FIA'O Reports" data-es="Reportes FIA'O">FIA'O Reports</h1>
+
+                    <button class="round-button" id="languageButton" title="Change language">
+                        A文
+                    </button>
+
+                    <button class="round-button" id="themeButton" title="Change theme">
+                        ☾
+                    </button>
                 </div>
 
-                <p class="subtitle">
+                <p class="subtitle"
+                   data-en="Financial tracking, credit summaries, and business analytics overview."
+                   data-es="Seguimiento financiero, resúmenes de crédito y análisis general del negocio.">
                     Financial tracking, credit summaries, and business analytics overview.
                 </p>
             </div>
 
             <div class="export-buttons">
-                <button class="outline-button" id="exportPDF">📕 Export PDF</button>
-                <button class="outline-button" id="exportExcel">📗 Export Excel</button>
+                <button class="outline-button" id="exportPDF">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    <span data-en="Export PDF" data-es="Exportar PDF">Export PDF</span>
+                </button>
+
+                <button class="outline-button" id="exportExcel">
+                    <i class="fa-solid fa-file-excel"></i>
+                    <span data-en="Export Excel" data-es="Exportar Excel">Export Excel</span>
+                </button>
             </div>
         </section>
 
         <!-- FILTROS -->
         <section class="filters">
+
             <div class="filter-group">
-                <label for="startDate">DATE RANGE</label>
+                <label for="startDate" data-en="DATE RANGE" data-es="RANGO DE FECHAS">
+                    DATE RANGE
+                </label>
+
                 <div class="date-fields">
                     <input type="date" id="startDate" value="2026-07-01">
-                    <span>to</span>
+                    <span data-en="to" data-es="hasta">to</span>
                     <input type="date" id="endDate" value="2026-07-31">
                 </div>
             </div>
 
             <div class="filter-group">
-                <label for="customerFilter">CUSTOMER STATUS / NAME</label>
+                <label for="customerFilter"
+                       data-en="CUSTOMER STATUS / NAME"
+                       data-es="ESTADO / NOMBRE DEL CLIENTE">
+                    CUSTOMER STATUS / NAME
+                </label>
+
                 <select id="customerFilter">
-                    <option value="all">All Customers (All Names)</option>
+                    <option value="all" data-en="All Customers (All Names)" data-es="Todos los clientes (Todos los nombres)">All Customers (All Names)</option>
                     <option value="Kamila Barranco">Kamila Barranco</option>
                     <option value="Sara Dominguez">Sara Dominguez</option>
                     <option value="Derek Morales">Derek Morales</option>
@@ -76,8 +105,15 @@
                 </select>
             </div>
 
-            <button class="apply-button" id="applyFilters">▼ Apply Filters</button>
-            <button class="clear-button" id="clearFilters">Clear Filters</button>
+            <button class="apply-button" id="applyFilters">
+                ▼ <span data-en="Apply Filters" data-es="Aplicar filtros">Apply Filters</span>
+            </button>
+
+            <button class="clear-button" id="clearFilters"
+                    data-en="Clear Filters" data-es="Limpiar filtros">
+                Clear Filters
+            </button>
+
         </section>
 
         <!-- TARJETAS RESUMEN -->
@@ -85,38 +121,46 @@
 
             <article class="stat-card">
                 <div class="stat-top">
-                    <p>TOTAL ACTIVE CREDIT</p>
+                    <p data-en="TOTAL ACTIVE CREDIT" data-es="CRÉDITO ACTIVO TOTAL">TOTAL ACTIVE CREDIT</p>
                     <span class="stat-icon yellow-icon">▣</span>
                 </div>
                 <h2 id="totalCredit">$1,450.00</h2>
-                <p class="positive">↑ +8.4% from last month</p>
+                <p class="positive" data-en="↑ +8.4% from last month" data-es="↑ +8.4% respecto al mes anterior">
+                    ↑ +8.4% from last month
+                </p>
             </article>
 
             <article class="stat-card">
                 <div class="stat-top">
-                    <p>COLLECTED THIS MONTH</p>
+                    <p data-en="COLLECTED THIS MONTH" data-es="RECAUDADO ESTE MES">COLLECTED THIS MONTH</p>
                     <span class="stat-icon green-icon">✓</span>
                 </div>
                 <h2 id="collected">$3,120.50</h2>
-                <p class="positive">↑ +12.1% efficiency</p>
+                <p class="positive" data-en="↑ +12.1% efficiency" data-es="↑ +12.1% de eficiencia">
+                    ↑ +12.1% efficiency
+                </p>
             </article>
 
             <article class="stat-card">
                 <div class="stat-top">
-                    <p>PENDING BALANCES</p>
+                    <p data-en="PENDING BALANCES" data-es="SALDOS PENDIENTES">PENDING BALANCES</p>
                     <span class="stat-icon red-icon">!</span>
                 </div>
                 <h2 id="pendingBalances">$340.00</h2>
-                <p class="negative">↓ 3 accounts overdue</p>
+                <p class="negative" data-en="↓ 3 accounts overdue" data-es="↓ 3 cuentas vencidas">
+                    ↓ 3 accounts overdue
+                </p>
             </article>
 
             <article class="stat-card">
                 <div class="stat-top">
-                    <p>TOTAL CUSTOMERS</p>
+                    <p data-en="TOTAL CUSTOMERS" data-es="TOTAL DE CLIENTES">TOTAL CUSTOMERS</p>
                     <span class="stat-icon blue-icon">▣</span>
                 </div>
                 <h2 id="totalCustomers">48</h2>
-                <p class="positive">♟ +5 new this month</p>
+                <p class="positive" data-en="♟ +5 new this month" data-es="♟ +5 nuevos este mes">
+                    ♟ +5 new this month
+                </p>
             </article>
 
         </section>
@@ -125,22 +169,34 @@
         <section class="charts-grid">
 
             <article class="chart-card">
-                <h2>Credit Activity &amp; Payments Flow</h2>
+                <h2 data-en="Credit Activity & Payments Flow"
+                    data-es="Actividad de crédito y flujo de pagos">
+                    Credit Activity &amp; Payments Flow
+                </h2>
 
                 <div class="legend">
-                    <span><i class="dot credit-dot"></i> Credit Issued</span>
-                    <span><i class="dot payment-dot"></i> Payments Received</span>
-                    <span><i class="dot overdue-dot"></i> Overdue</span>
+                    <span><i class="dot credit-dot"></i>
+                        <span data-en="Credit Issued" data-es="Crédito otorgado">Credit Issued</span>
+                    </span>
+
+                    <span><i class="dot payment-dot"></i>
+                        <span data-en="Payments Received" data-es="Pagos recibidos">Payments Received</span>
+                    </span>
+
+                    <span><i class="dot overdue-dot"></i>
+                        <span data-en="Overdue" data-es="Vencido">Overdue</span>
+                    </span>
                 </div>
 
                 <div class="bar-chart">
+
                     <div class="bar-group">
                         <div class="bars">
                             <span class="bar credit-bar" style="height: 88px;"></span>
                             <span class="bar payment-bar" style="height: 132px;"></span>
                             <span class="bar overdue-bar" style="height: 30px;"></span>
                         </div>
-                        <span class="week-label">Week 1</span>
+                        <span class="week-label" data-en="Week 1" data-es="Semana 1">Week 1</span>
                     </div>
 
                     <div class="bar-group">
@@ -149,7 +205,7 @@
                             <span class="bar payment-bar" style="height: 160px;"></span>
                             <span class="bar overdue-bar" style="height: 53px;"></span>
                         </div>
-                        <span class="week-label">Week 2</span>
+                        <span class="week-label" data-en="Week 2" data-es="Semana 2">Week 2</span>
                     </div>
 
                     <div class="bar-group">
@@ -158,7 +214,7 @@
                             <span class="bar payment-bar" style="height: 103px;"></span>
                             <span class="bar overdue-bar" style="height: 24px;"></span>
                         </div>
-                        <span class="week-label">Week 3</span>
+                        <span class="week-label" data-en="Week 3" data-es="Semana 3">Week 3</span>
                     </div>
 
                     <div class="bar-group">
@@ -167,17 +223,21 @@
                             <span class="bar payment-bar" style="height: 190px;"></span>
                             <span class="bar overdue-bar" style="height: 60px;"></span>
                         </div>
-                        <span class="week-label">Week 4</span>
+                        <span class="week-label" data-en="Week 4" data-es="Semana 4">Week 4</span>
                     </div>
+
                 </div>
             </article>
 
             <article class="chart-card payment-breakdown">
-                <h2>Payment Status Breakdown</h2>
+                <h2 data-en="Payment Status Breakdown"
+                    data-es="Desglose del estado de los pagos">
+                    Payment Status Breakdown
+                </h2>
 
                 <div class="progress-item">
                     <div class="progress-label">
-                        <strong>On Time (75%)</strong>
+                        <strong data-en="On Time (75%)" data-es="A tiempo (75%)">On Time (75%)</strong>
                         <strong>$2,340</strong>
                     </div>
                     <div class="progress-track">
@@ -187,7 +247,7 @@
 
                 <div class="progress-item">
                     <div class="progress-label">
-                        <strong>Pending (17%)</strong>
+                        <strong data-en="Pending (17%)" data-es="Pendiente (17%)">Pending (17%)</strong>
                         <strong>$540</strong>
                     </div>
                     <div class="progress-track">
@@ -197,63 +257,113 @@
 
                 <div class="progress-item">
                     <div class="progress-label">
-                        <strong>Overdue (8%)</strong>
+                        <strong data-en="Overdue (8%)" data-es="Vencido (8%)">Overdue (8%)</strong>
                         <strong>$240</strong>
                     </div>
                     <div class="progress-track">
                         <div class="progress-fill overdue-fill" style="width:8%"></div>
                     </div>
                 </div>
+
             </article>
 
         </section>
 
         <!-- TABLA DE TRANSACCIONES -->
         <section class="transactions">
+
             <div class="transactions-heading">
-                <h2>Recent Credit Transactions</h2>
+                <h2 data-en="Recent Credit Transactions"
+                    data-es="Transacciones de crédito recientes">
+                    Recent Credit Transactions
+                </h2>
+
                 <span id="transactionCount">9 transactions</span>
             </div>
 
             <div class="table-container">
                 <table class="transactions-table">
+
                     <thead>
                         <tr>
-                            <th>Customer Name</th>
-                            <th>Description</th>
-                            <th>Amount</th>
-                            <th>Date</th>
-                            <th>Status</th>
+                            <th data-en="Customer Name" data-es="Nombre del cliente">Customer Name</th>
+                            <th data-en="Description" data-es="Descripción">Description</th>
+                            <th data-en="Amount" data-es="Monto">Amount</th>
+                            <th data-en="Date" data-es="Fecha">Date</th>
+                            <th data-en="Status" data-es="Estado">Status</th>
                         </tr>
                     </thead>
 
                     <tbody id="transactionsBody"></tbody>
+
                 </table>
 
-                <p id="noResults" class="no-results" hidden>
+                <p id="noResults" class="no-results" hidden
+                   data-en="No transactions found for these filters."
+                   data-es="No se encontraron transacciones con estos filtros.">
                     No transactions found for these filters.
                 </p>
             </div>
 
-            <div class="pagination" id="pagination">
-                <button class="page-btn active" data-page="1">1</button>
-                <button class="page-btn" data-page="2">2</button>
-                <button class="page-btn" data-page="3">3</button>
-            </div>
+            <div class="pagination" id="pagination"></div>
+
         </section>
 
         <footer>
-            <p>© 2026 FIA'O — Credit Management System</p>
+            <p data-en="© 2026 FIA'O — Credit Management System"
+               data-es="© 2026 FIA'O — Sistema de gestión de crédito">
+                © 2026 FIA'O — Credit Management System
+            </p>
         </footer>
 
     </main>
 
     <script>
-        // Datos de demostración. Cambia los importes y fechas por los reales.
+        // =====================================
+        // LANGUAGE SYSTEM
+        // =====================================
+
+        let currentLanguage = "en";
+
+        function changeLanguage() {
+
+            currentLanguage = currentLanguage === "en" ? "es" : "en";
+
+            document.documentElement.lang = currentLanguage;
+
+            // Cambiar todos los textos con data-en y data-es
+            document.querySelectorAll("[data-en][data-es]").forEach(element => {
+                element.textContent = element.dataset[currentLanguage];
+            });
+
+            // Cambiar títulos de los botones
+            document.getElementById("languageButton").title =
+                currentLanguage === "en" ? "Change language" : "Cambiar idioma";
+
+            document.getElementById("themeButton").title =
+                currentLanguage === "en" ? "Change theme" : "Cambiar tema";
+
+            // Actualizar título de página
+            document.title = currentLanguage === "en"
+                ? "FIA'O - Reports"
+                : "FIA'O - Reportes";
+
+            // Volver a dibujar la tabla en el idioma seleccionado
+            renderTransactions();
+        }
+
+        document.getElementById("languageButton").addEventListener("click", changeLanguage);
+
+
+        // =====================================
+        // TRANSACTION DATA
+        // =====================================
+
         const transactions = [
             {
                 name: "Kamila Barranco",
                 description: "Grocery items & supplies",
+                descriptionEs: "Productos y artículos de supermercado",
                 amount: 45.00,
                 date: "2026-07-28",
                 status: "On Time"
@@ -261,6 +371,7 @@
             {
                 name: "Sara Dominguez",
                 description: "Weekly store credit",
+                descriptionEs: "Crédito semanal de la tienda",
                 amount: 120.00,
                 date: "2026-07-25",
                 status: "Pending"
@@ -268,13 +379,15 @@
             {
                 name: "Derek Morales",
                 description: "Bakery stock order",
+                descriptionEs: "Pedido de productos de panadería",
                 amount: 85.50,
                 date: "2026-07-18",
                 status: "Overdue"
             },
             {
-                name: " Isabela Villagra",
+                name: "Isabela Villagra",
                 description: "Household supplies",
+                descriptionEs: "Artículos para el hogar",
                 amount: 60.00,
                 date: "2026-07-15",
                 status: "On Time"
@@ -282,6 +395,7 @@
             {
                 name: "Julian Remy",
                 description: "Weekly grocery credit",
+                descriptionEs: "Crédito semanal para supermercado",
                 amount: 75.00,
                 date: "2026-07-12",
                 status: "Pending"
@@ -289,6 +403,7 @@
             {
                 name: "Dayana Dixon",
                 description: "Bakery products",
+                descriptionEs: "Productos de panadería",
                 amount: 32.00,
                 date: "2026-07-10",
                 status: "Overdue"
@@ -296,6 +411,7 @@
             {
                 name: "Emanuel Rivera",
                 description: "Food and beverages",
+                descriptionEs: "Alimentos y bebidas",
                 amount: 95.00,
                 date: "2026-07-08",
                 status: "On Time"
@@ -303,6 +419,7 @@
             {
                 name: "Kriss Tryhane",
                 description: "Store supplies",
+                descriptionEs: "Suministros de la tienda",
                 amount: 50.00,
                 date: "2026-07-05",
                 status: "Pending"
@@ -310,6 +427,7 @@
             {
                 name: "Jacobo Gonzales",
                 description: "Credit purchase",
+                descriptionEs: "Compra a crédito",
                 amount: 40.00,
                 date: "2026-07-02",
                 status: "On Time"
@@ -321,9 +439,12 @@
         let filteredTransactions = [...transactions];
 
         const transactionsBody = document.getElementById("transactionsBody");
-        const pageButtons = document.querySelectorAll(".page-btn");
         const noResults = document.getElementById("noResults");
         const transactionCount = document.getElementById("transactionCount");
+
+        // =====================================
+        // FORMAT FUNCTIONS
+        // =====================================
 
         function formatMoney(amount) {
             return amount.toLocaleString("en-US", {
@@ -332,20 +453,56 @@
             });
         }
 
+        function formatDate(date) {
+            const dateObject = new Date(date + "T12:00:00");
+
+            return dateObject.toLocaleDateString(
+                currentLanguage === "es" ? "es-PA" : "en-US",
+                {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric"
+                }
+            );
+        }
+
+        function translateStatus(status) {
+
+            if (currentLanguage === "en") {
+                return status;
+            }
+
+            const translations = {
+                "On Time": "A tiempo",
+                "Pending": "Pendiente",
+                "Overdue": "Vencido"
+            };
+
+            return translations[status] || status;
+        }
+
         function statusClass(status) {
             if (status === "On Time") return "ontime";
             if (status === "Pending") return "pending";
             return "overdue";
         }
 
+
+        // =====================================
+        // PAGINATION
+        // =====================================
+
         function renderPagination() {
+
             const totalPages = Math.ceil(filteredTransactions.length / rowsPerPage);
             const pagination = document.getElementById("pagination");
 
             pagination.innerHTML = "";
 
             for (let page = 1; page <= totalPages; page++) {
+
                 const button = document.createElement("button");
+
                 button.className = "page-btn" + (page === currentPage ? " active" : "");
                 button.textContent = page;
                 button.dataset.page = page;
@@ -361,37 +518,66 @@
             pagination.hidden = totalPages <= 1;
         }
 
-        function renderTransactions() {
-            const start = (currentPage - 1) * rowsPerPage;
-            const visibleTransactions = filteredTransactions.slice(start, start + rowsPerPage);
 
-            transactionsBody.innerHTML = visibleTransactions.map(item => `
-                <tr>
-                    <td><strong>${item.name}</strong></td>
-                    <td>${item.description}</td>
-                    <td>${formatMoney(item.amount)}</td>
-                    <td>${item.date}</td>
-                    <td>
-                        <span class="status ${statusClass(item.status)}">
-                            ${item.status}
-                        </span>
-                    </td>
-                </tr>
-            `).join("");
+        // =====================================
+        // RENDER TRANSACTIONS
+        // =====================================
+
+        function renderTransactions() {
+
+            const start = (currentPage - 1) * rowsPerPage;
+
+            const visibleTransactions = filteredTransactions.slice(
+                start,
+                start + rowsPerPage
+            );
+
+            transactionsBody.innerHTML = visibleTransactions.map(item => {
+
+                const description = currentLanguage === "es"
+                    ? item.descriptionEs
+                    : item.description;
+
+                return `
+                    <tr>
+                        <td><strong>${item.name}</strong></td>
+                        <td>${description}</td>
+                        <td>${formatMoney(item.amount)}</td>
+                        <td>${formatDate(item.date)}</td>
+                        <td>
+                            <span class="status ${statusClass(item.status)}">
+                                ${translateStatus(item.status)}
+                            </span>
+                        </td>
+                    </tr>
+                `;
+
+            }).join("");
 
             noResults.hidden = filteredTransactions.length !== 0;
-            transactionCount.textContent =
-                `${filteredTransactions.length} transaction${filteredTransactions.length === 1 ? "" : "s"}`;
+
+            const count = filteredTransactions.length;
+
+            transactionCount.textContent = currentLanguage === "es"
+                ? `${count} ${count === 1 ? "transacción" : "transacciones"}`
+                : `${count} transaction${count === 1 ? "" : "s"}`;
 
             renderPagination();
         }
 
+
+        // =====================================
+        // FILTERS
+        // =====================================
+
         function applyFilters() {
+
             const selectedCustomer = document.getElementById("customerFilter").value;
             const startDate = document.getElementById("startDate").value;
             const endDate = document.getElementById("endDate").value;
 
             filteredTransactions = transactions.filter(item => {
+
                 const matchesCustomer =
                     selectedCustomer === "all" || item.name === selectedCustomer;
 
@@ -408,40 +594,66 @@
         document.getElementById("applyFilters").addEventListener("click", applyFilters);
 
         document.getElementById("clearFilters").addEventListener("click", () => {
+
             document.getElementById("customerFilter").value = "all";
             document.getElementById("startDate").value = "";
             document.getElementById("endDate").value = "";
+
             filteredTransactions = [...transactions];
             currentPage = 1;
+
             renderTransactions();
         });
 
-        // Exportar las transacciones filtradas a Excel
+
+        // =====================================
+        // EXPORT EXCEL
+        // =====================================
+
         document.getElementById("exportExcel").addEventListener("click", () => {
+
             if (typeof XLSX === "undefined") {
-                alert("Excel export could not load. Check your internet connection.");
+                alert(currentLanguage === "es"
+                    ? "No se pudo cargar la exportación a Excel. Revisa tu conexión a internet."
+                    : "Excel export could not load. Check your internet connection.");
                 return;
             }
 
             const data = filteredTransactions.map(item => ({
-                "Customer Name": item.name,
-                "Description": item.description,
-                "Amount": item.amount,
-                "Date": item.date,
-                "Status": item.status
+                [currentLanguage === "es" ? "Nombre del cliente" : "Customer Name"]: item.name,
+                [currentLanguage === "es" ? "Descripción" : "Description"]:
+                    currentLanguage === "es" ? item.descriptionEs : item.description,
+                [currentLanguage === "es" ? "Monto" : "Amount"]: item.amount,
+                [currentLanguage === "es" ? "Fecha" : "Date"]: item.date,
+                [currentLanguage === "es" ? "Estado" : "Status"]: translateStatus(item.status)
             }));
 
             const worksheet = XLSX.utils.json_to_sheet(data);
             const workbook = XLSX.utils.book_new();
 
-            XLSX.utils.book_append_sheet(workbook, worksheet, "Transactions");
-            XLSX.writeFile(workbook, "FIAO-Reports.xlsx");
+            XLSX.utils.book_append_sheet(
+                workbook,
+                worksheet,
+                currentLanguage === "es" ? "Transacciones" : "Transactions"
+            );
+
+            XLSX.writeFile(
+                workbook,
+                currentLanguage === "es" ? "FIAO-Reportes.xlsx" : "FIAO-Reports.xlsx"
+            );
         });
 
-        // Exportar las transacciones filtradas a PDF
+
+        // =====================================
+        // EXPORT PDF
+        // =====================================
+
         document.getElementById("exportPDF").addEventListener("click", () => {
+
             if (!window.jspdf) {
-                alert("PDF export could not load. Check your internet connection.");
+                alert(currentLanguage === "es"
+                    ? "No se pudo cargar la exportación a PDF. Revisa tu conexión a internet."
+                    : "PDF export could not load. Check your internet connection.");
                 return;
             }
 
@@ -449,47 +661,70 @@
             const pdf = new jsPDF();
 
             pdf.setFontSize(18);
-            pdf.text("FIA'O - Recent Credit Transactions", 14, 20);
+
+            pdf.text(
+                currentLanguage === "es"
+                    ? "FIA'O - Transacciones de crédito recientes"
+                    : "FIA'O - Recent Credit Transactions",
+                14,
+                20
+            );
 
             pdf.setFontSize(10);
+
             let y = 32;
 
-            pdf.text("Customer", 14, y);
-            pdf.text("Description", 65, y);
-            pdf.text("Amount", 125, y);
-            pdf.text("Date", 153, y);
-            pdf.text("Status", 180, y);
+            pdf.text(currentLanguage === "es" ? "Cliente" : "Customer", 14, y);
+            pdf.text(currentLanguage === "es" ? "Descripción" : "Description", 65, y);
+            pdf.text(currentLanguage === "es" ? "Monto" : "Amount", 125, y);
+            pdf.text(currentLanguage === "es" ? "Fecha" : "Date", 153, y);
+            pdf.text(currentLanguage === "es" ? "Estado" : "Status", 180, y);
 
             y += 7;
 
             filteredTransactions.forEach(item => {
+
                 if (y > 280) {
                     pdf.addPage();
                     y = 20;
                 }
 
                 pdf.text(item.name, 14, y);
-                pdf.text(item.description.substring(0, 28), 65, y);
+
+                pdf.text(
+                    (currentLanguage === "es" ? item.descriptionEs : item.description).substring(0, 28),
+                    65,
+                    y
+                );
+
                 pdf.text(formatMoney(item.amount), 125, y);
-                pdf.text(item.date, 153, y);
-                pdf.text(item.status, 180, y);
+                pdf.text(formatDate(item.date), 153, y);
+                pdf.text(translateStatus(item.status), 180, y);
+
                 y += 9;
             });
 
-            pdf.save("FIAO-Reports.pdf");
+            pdf.save(
+                currentLanguage === "es" ? "FIAO-Reportes.pdf" : "FIAO-Reports.pdf"
+            );
         });
 
-        // Alternar tema claro y oscuro
+
+        // =====================================
+        // DARK MODE
+        // =====================================
+
         document.getElementById("themeButton").addEventListener("click", () => {
             document.body.classList.toggle("dark-mode");
         });
 
-        // Botón de idioma: informa que el diseño actual está en inglés
-        document.getElementById("languageButton").addEventListener("click", () => {
-            alert("The Reports page is currently displayed in English.");
-        });
+
+        // =====================================
+        // INITIALIZE
+        // =====================================
 
         renderTransactions();
+
     </script>
 
 </body>
