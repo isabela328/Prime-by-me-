@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,10 +9,8 @@
 </head>
 <body>
 
-    <!-- BARRA PRINCIPAL -->
     <header class="navbar">
         <a href="index.html" class="logo">FIA<span>'O</span></a>
-
         <nav class="nav-links">
             <a href="index.html">Home</a>
             <a href="credit.html" class="active">Credit</a>
@@ -22,25 +21,33 @@
         </nav>
     </header>
 
-    <!-- BARRA SECUNDARIA -->
     <section class="secondary-bar">
         <div class="secondary-actions">
-            <button class="action-button notification-button" aria-label="Notifications">
-                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
-                <span class="notification-number">3</span>
+            <button class="action-button notification-button" id="notificationButton" aria-label="Notifications">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+                    <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+                </svg>
+                <span class="notification-number" id="notificationNumber">3</span>
             </button>
 
-            <button class="action-button language-button" aria-label="Language">
-                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> <span>ES</span>
+            <button class="action-button language-button" id="languageButton" aria-label="Change language">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M2 12h20"/>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+                <span id="languageLabel">ES</span>
             </button>
 
-            <button class="action-button" aria-label="Dark mode">
-                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+            <button class="action-button" id="darkModeButton" aria-label="Dark mode">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+                </svg>
             </button>
         </div>
     </section>
 
-    <!-- CONTENIDO PRINCIPAL -->
     <main class="credit-page">
 
         <section class="credit-header">
@@ -50,42 +57,44 @@
 
         <section class="dashboard-grid">
 
-            <!-- COLUMNA IZQUIERDA -->
             <div class="left-column">
 
                 <div class="panel customer-selector">
-                    <h2><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Select a Customer</h2>
-                    <div class="customer-select">
-                        <strong>Ramón Batista</strong>
+                    <h2>♙ Select a Customer</h2>
+                    <button class="customer-select" id="customerSelect" type="button">
+                        <strong id="selectedCustomerName">Ramón Batista</strong>
                         <span>⌄</span>
+                    </button>
+                    <div class="customer-options" id="customerOptions" hidden>
+                        <button type="button" data-name="Ramón Batista" data-debt="35">Ramón Batista</button>
+                        <button type="button" data-name="Carlos Gómez" data-debt="12.50">Carlos Gómez</button>
+                        <button type="button" data-name="Ana Martínez" data-debt="20">Ana Martínez</button>
                     </div>
                 </div>
 
                 <div class="panel customer-card">
                     <h2 class="customer-title">
                         <span class="customer-icon">●</span>
-                        Ramón Batista
+                        <span id="customerCardName">Ramón Batista</span>
                     </h2>
 
                     <div class="customer-stats">
                         <div class="stat-box">
                             <span>Current Debt</span>
-                            <strong class="red-text">B/. 35.00</strong>
+                            <strong class="red-text" id="currentDebt">B/. 35.00</strong>
                         </div>
-
                         <div class="stat-box">
                             <span>Credit Limit</span>
-                            <strong>B/. 100.00</strong>
+                            <strong id="creditLimit">B/. 100.00</strong>
                         </div>
                     </div>
 
                     <div class="credit-progress">
                         <div class="progress-bar">
-                            <div class="progress-value"></div>
+                            <div class="progress-value" id="progressValue"></div>
                         </div>
-
                         <div class="progress-info">
-                            <strong>35% used</strong>
+                            <strong id="percentageUsed">35% used</strong>
                             <strong>Limit: B/. 100.00</strong>
                         </div>
                     </div>
@@ -93,30 +102,29 @@
 
                 <div class="panel automatic-block">
                     <div class="block-content">
-                        <h2><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg> Automatic Blocking</h2>
+                        <h2>♢ Automatic Blocking</h2>
                         <p>If a customer exceeds the debt limit, system prevents new credits.</p>
+                        <p id="blockingStatus" class="blocking-status">Automatic blocking is enabled.</p>
                     </div>
-
                     <label class="switch">
-                        <input type="checkbox" checked>
+                        <input type="checkbox" id="blockingToggle" checked>
                         <span class="slider"></span>
                     </label>
                 </div>
 
             </div>
 
-            <!-- COLUMNA CENTRAL -->
             <div class="center-column">
 
                 <div class="panel debt-history">
                     <h2>Debt History</h2>
                     <p class="panel-description">Track all purchases and payments.</p>
 
-                    <div class="history-list">
+                    <div class="history-list" id="historyList">
 
                         <div class="history-item">
                             <div class="date-box"><strong>14</strong><span>JUL</span></div>
-                            <div class="history-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg></div>
+                            <div class="history-icon">🛒</div>
                             <div class="history-product">
                                 <strong>Milk (2)</strong>
                                 <span>Fiado</span>
@@ -127,7 +135,7 @@
 
                         <div class="history-item">
                             <div class="date-box"><strong>09</strong><span>JUL</span></div>
-                            <div class="history-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg></div>
+                            <div class="history-icon">🛒</div>
                             <div class="history-product">
                                 <strong>Detergent</strong>
                                 <span>Fiado</span>
@@ -138,7 +146,7 @@
 
                         <div class="history-item">
                             <div class="date-box"><strong>05</strong><span>JUL</span></div>
-                            <div class="history-icon payment"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg></div>
+                            <div class="history-icon payment">▣</div>
                             <div class="history-product">
                                 <strong>Payment Received</strong>
                                 <span>Abono</span>
@@ -149,7 +157,7 @@
 
                         <div class="history-item">
                             <div class="date-box"><strong>01</strong><span>JUL</span></div>
-                            <div class="history-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg></div>
+                            <div class="history-icon">🛒</div>
                             <div class="history-product">
                                 <strong>Groceries Pack</strong>
                                 <span>Fiado</span>
@@ -160,48 +168,50 @@
 
                     </div>
 
-                    <a href="#" class="view-history">View Full History →</a>
+                    <a href="#" class="view-history" id="viewHistory">View Full History →</a>
                 </div>
 
                 <div class="panel register-payment">
                     <h2>Register Payment</h2>
                     <p class="panel-description">Record payments made by the customer.</p>
 
-                    <label for="payment-amount">Payment Amount</label>
-                    <div class="payment-input" id="payment-amount">B/. 0.00</div>
+                    <label for="paymentAmountInput">Payment Amount</label>
+                    <div class="payment-input">
+                        <span>B/.</span>
+                        <input type="number" id="paymentAmountInput" min="0" step="0.01" placeholder="0.00">
+                    </div>
 
                     <p class="field-label">Payment Type</p>
 
                     <div class="payment-types">
                         <label class="payment-option">
-                            <input type="radio" name="payment" checked>
+                            <input type="radio" name="payment" value="partial" checked>
                             <span>Partial Payment</span>
                         </label>
-
                         <label class="payment-option">
-                            <input type="radio" name="payment">
+                            <input type="radio" name="payment" value="full">
                             <span>Full Payment</span>
                         </label>
                     </div>
 
                     <div class="payment-buttons">
-                        <button class="register-button">Register Payment</button>
-                        <button class="paid-button">Mark as Paid</button>
+                        <button class="register-button" id="registerPaymentButton">Register Payment</button>
+                        <button class="paid-button" id="markPaidButton">Mark as Paid</button>
                     </div>
+                    <p id="paymentMessage" class="payment-message" aria-live="polite"></p>
                 </div>
 
             </div>
 
-            <!-- COLUMNA DERECHA -->
             <div class="right-column">
 
                 <div class="panel recent-activity">
                     <h2>Recent Activity</h2>
 
-                    <div class="activity-list">
+                    <div class="activity-list" id="activityList">
 
                         <div class="activity-item">
-                            <div class="activity-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg></div>
+                            <div class="activity-icon">▣</div>
                             <div class="activity-info">
                                 <strong>Ramón Batista</strong>
                                 <span>Paid B/. 15.00</span>
@@ -213,7 +223,7 @@
                         </div>
 
                         <div class="activity-item">
-                            <div class="activity-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg></div>
+                            <div class="activity-icon">🛒</div>
                             <div class="activity-info">
                                 <strong>Carlos Gómez</strong>
                                 <span>New debt: B/. 12.50</span>
@@ -225,7 +235,7 @@
                         </div>
 
                         <div class="activity-item">
-                            <div class="activity-icon green"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg></div>
+                            <div class="activity-icon green">▣</div>
                             <div class="activity-info">
                                 <strong>Ana Martínez</strong>
                                 <span>Payment received: B/. 20.00</span>
@@ -238,31 +248,27 @@
 
                     </div>
 
-                    <a href="#" class="view-activity">View all activity →</a>
+                    <a href="#" class="view-activity" id="viewActivity">View all activity →</a>
                 </div>
 
                 <div class="panel debt-overview">
                     <h2>Debt Overview</h2>
-
                     <div class="overview-grid">
                         <div class="overview-box">
                             <span>Outstanding Debt</span>
-                            <strong>B/. 480.00</strong>
+                            <strong id="outstandingDebt">B/. 480.00</strong>
                         </div>
-
                         <div class="overview-box">
                             <span>Payments Today</span>
-                            <strong>B/. 150.00</strong>
+                            <strong id="paymentsToday">B/. 150.00</strong>
                         </div>
-
                         <div class="overview-box">
                             <span>Customers with Debt</span>
-                            <strong>18</strong>
+                            <strong id="customersWithDebt">18</strong>
                         </div>
-
                         <div class="overview-box">
                             <span>Overdue</span>
-                            <strong>4</strong>
+                            <strong id="overdueCount">4</strong>
                         </div>
                     </div>
                 </div>
@@ -271,6 +277,321 @@
 
         </section>
     </main>
+
+    <div class="notification-panel" id="notificationPanel" hidden>
+        <h3>Notifications</h3>
+        <p>Ramón Batista has an outstanding debt of B/. 35.00.</p>
+        <p>Remember to review pending payments.</p>
+        <p>Automatic blocking is currently enabled.</p>
+        <button type="button" id="closeNotifications">Close</button>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay" hidden>
+        <div class="modal-box">
+            <button class="modal-close" id="closeModal" aria-label="Close">×</button>
+            <h2 id="modalTitle">History</h2>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+        const $ = (selector) => document.querySelector(selector);
+
+        let currentCustomer = "Ramón Batista";
+        let currentDebt = 35;
+        const creditLimit = 100;
+        let paymentsToday = 150;
+        let language = "en";
+
+        const customers = {
+            "Ramón Batista": 35,
+            "Carlos Gómez": 12.50,
+            "Ana Martínez": 20
+        };
+
+        const paymentInput = $("#paymentAmountInput");
+        const paymentMessage = $("#paymentMessage");
+        const historyList = $("#historyList");
+        const activityList = $("#activityList");
+
+        const money = (amount) => "B/. " + Number(amount).toFixed(2);
+
+        function updateCustomerDisplay() {
+            $("#selectedCustomerName").textContent = currentCustomer;
+            $("#customerCardName").textContent = currentCustomer;
+            $("#currentDebt").textContent = money(currentDebt);
+
+            const percentage = Math.min((currentDebt / creditLimit) * 100, 100);
+            $("#progressValue").style.width = percentage + "%";
+            $("#percentageUsed").textContent = Math.round(percentage) + "% used";
+        }
+
+        function updateOverview() {
+            const totalDebt = Object.values(customers).reduce((sum, debt) => sum + debt, 0);
+            $("#outstandingDebt").textContent = money(480 - 35 + totalDebt);
+            $("#paymentsToday").textContent = money(paymentsToday);
+            $("#customersWithDebt").textContent =
+                Object.values(customers).filter(debt => debt > 0).length + 15;
+        }
+
+        function showMessage(message, type = "success") {
+            paymentMessage.textContent = message;
+            paymentMessage.className = "payment-message " + type;
+        }
+
+        function addHistoryPayment(amount, description) {
+            const now = new Date();
+            const day = String(now.getDate()).padStart(2, "0");
+            const month = now.toLocaleString("en", { month: "short" }).toUpperCase();
+
+            const item = document.createElement("div");
+            item.className = "history-item";
+            item.innerHTML = `
+                <div class="date-box"><strong>${day}</strong><span>${month}</span></div>
+                <div class="history-icon payment">▣</div>
+                <div class="history-product">
+                    <strong>${description}</strong>
+                    <span>Payment</span>
+                </div>
+                <strong class="payment-amount">−${money(amount)}</strong>
+                <span class="paid">Paid</span>
+            `;
+            historyList.prepend(item);
+        }
+
+        function addActivity(amount) {
+            const item = document.createElement("div");
+            item.className = "activity-item";
+            item.innerHTML = `
+                <div class="activity-icon green">▣</div>
+                <div class="activity-info">
+                    <strong>${currentCustomer}</strong>
+                    <span>Payment received: ${money(amount)}</span>
+                </div>
+                <div class="activity-time">
+                    <strong>Today</strong>
+                    <span class="green-dot"></span>
+                </div>
+            `;
+            activityList.prepend(item);
+        }
+
+        function registerPayment(amount) {
+            if (!Number.isFinite(amount) || amount <= 0) {
+                showMessage("Please enter a valid payment amount.", "error");
+                return;
+            }
+
+            if (currentDebt <= 0) {
+                showMessage("This customer has no outstanding debt.", "error");
+                return;
+            }
+
+            if (amount > currentDebt) {
+                showMessage("The payment cannot be greater than the current debt.", "error");
+                return;
+            }
+
+            currentDebt = Math.max(0, currentDebt - amount);
+            customers[currentCustomer] = currentDebt;
+            paymentsToday += amount;
+
+            addHistoryPayment(amount, "Payment Received");
+            addActivity(amount);
+            updateCustomerDisplay();
+            updateOverview();
+
+            paymentInput.value = "";
+            showMessage("Payment registered successfully!");
+        }
+
+        $("#registerPaymentButton").addEventListener("click", () => {
+            const amount = parseFloat(paymentInput.value);
+            registerPayment(amount);
+        });
+
+        $("#markPaidButton").addEventListener("click", () => {
+            if (currentDebt <= 0) {
+                showMessage("This customer has no outstanding debt.", "error");
+                return;
+            }
+
+            const amount = currentDebt;
+            registerPayment(amount);
+            showMessage("The debt has been fully paid!");
+        });
+
+        document.querySelectorAll('input[name="payment"]').forEach(radio => {
+            radio.addEventListener("change", () => {
+                if (radio.value === "full" && radio.checked) {
+                    paymentInput.value = currentDebt.toFixed(2);
+                }
+            });
+        });
+
+        paymentInput.addEventListener("input", () => {
+            const fullOption = document.querySelector('input[name="payment"][value="full"]');
+            if (fullOption.checked && Number(paymentInput.value) !== currentDebt) {
+                document.querySelector('input[name="payment"][value="partial"]').checked = true;
+            }
+        });
+
+        // Selector de clientes
+        const customerSelect = $("#customerSelect");
+        const customerOptions = $("#customerOptions");
+
+        customerSelect.addEventListener("click", () => {
+            customerOptions.hidden = !customerOptions.hidden;
+        });
+
+        customerOptions.querySelectorAll("button").forEach(button => {
+            button.addEventListener("click", () => {
+                currentCustomer = button.dataset.name;
+                currentDebt = customers[currentCustomer];
+                updateCustomerDisplay();
+                customerOptions.hidden = true;
+                paymentInput.value = "";
+                showMessage("Customer selected: " + currentCustomer);
+            });
+        });
+
+        document.addEventListener("click", (event) => {
+            if (!customerSelect.contains(event.target) && !customerOptions.contains(event.target)) {
+                customerOptions.hidden = true;
+            }
+        });
+
+        // Bloqueo automático
+        $("#blockingToggle").addEventListener("change", (event) => {
+            $("#blockingStatus").textContent = event.target.checked
+                ? "Automatic blocking is enabled."
+                : "Automatic blocking is disabled.";
+        });
+
+        // Notificaciones
+        const notificationPanel = $("#notificationPanel");
+
+        $("#notificationButton").addEventListener("click", () => {
+            notificationPanel.hidden = !notificationPanel.hidden;
+        });
+
+        $("#closeNotifications").addEventListener("click", () => {
+            notificationPanel.hidden = true;
+            $("#notificationNumber").style.display = "none";
+        });
+
+        // Modo oscuro
+        $("#darkModeButton").addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+        });
+
+        // Ventanas de historial
+        const modalOverlay = $("#modalOverlay");
+
+        function openModal(title, content) {
+            $("#modalTitle").textContent = title;
+            $("#modalContent").innerHTML = content;
+            modalOverlay.hidden = false;
+        }
+
+        function closeModal() {
+            modalOverlay.hidden = true;
+        }
+
+        $("#closeModal").addEventListener("click", closeModal);
+
+        modalOverlay.addEventListener("click", (event) => {
+            if (event.target === modalOverlay) closeModal();
+        });
+
+        $("#viewHistory").addEventListener("click", (event) => {
+            event.preventDefault();
+            openModal("Full Debt History", historyList.innerHTML);
+        });
+
+        $("#viewActivity").addEventListener("click", (event) => {
+            event.preventDefault();
+            openModal("All Recent Activity", activityList.innerHTML);
+        });
+
+        // Cambio de idioma
+        const translations = {
+            "Home": "Inicio",
+            "Credit": "Crédito",
+            "Products": "Productos",
+            "Clients": "Clientes",
+            "Reports": "Reportes",
+            "Contact": "Contacto",
+            "Debts & Payments": "Deudas y pagos",
+            "Manage customer debts, register payments, and track balances easily.": "Administra las deudas de los clientes, registra pagos y consulta sus saldos fácilmente.",
+            "Select a Customer": "Seleccionar cliente",
+            "Current Debt": "Deuda actual",
+            "Credit Limit": "Límite de crédito",
+            "Automatic Blocking": "Bloqueo automático",
+            "If a customer exceeds the debt limit, system prevents new credits.": "Si un cliente supera el límite de deuda, el sistema impide nuevos créditos.",
+            "Debt History": "Historial de deudas",
+            "Track all purchases and payments.": "Consulta todas las compras y los pagos.",
+            "Register Payment": "Registrar pago",
+            "Record payments made by the customer.": "Registra los pagos realizados por el cliente.",
+            "Payment Amount": "Cantidad del pago",
+            "Payment Type": "Tipo de pago",
+            "Partial Payment": "Pago parcial",
+            "Full Payment": "Pago completo",
+            "Mark as Paid": "Marcar como pagado",
+            "Recent Activity": "Actividad reciente",
+            "Debt Overview": "Resumen de deudas",
+            "Outstanding Debt": "Deuda pendiente",
+            "Payments Today": "Pagos de hoy",
+            "Customers with Debt": "Clientes con deuda",
+            "Overdue": "Vencidos",
+            "View Full History →": "Ver historial completo →",
+            "View all activity →": "Ver toda la actividad →",
+            "Pending": "Pendiente",
+            "Paid": "Pagado",
+            "Today": "Hoy",
+            "Yesterday": "Ayer",
+            "Notifications": "Notificaciones",
+            "Close": "Cerrar",
+            "Full Debt History": "Historial completo de deudas",
+            "All Recent Activity": "Toda la actividad reciente"
+        };
+
+        const originalTexts = new Map();
+
+        function saveOriginalTextNodes() {
+            const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+            let node;
+            while (node = walker.nextNode()) {
+                const value = node.nodeValue.trim();
+                if (value && translations[value] && !originalTexts.has(node)) {
+                    originalTexts.set(node, value);
+                }
+            }
+        }
+
+        saveOriginalTextNodes();
+
+        $("#languageButton").addEventListener("click", () => {
+            language = language === "en" ? "es" : "en";
+            $("#languageLabel").textContent = language === "en" ? "ES" : "EN";
+
+            originalTexts.forEach((original, node) => {
+                if (language === "es") {
+                    node.nodeValue = node.nodeValue.replace(original, translations[original]);
+                } else {
+                    node.nodeValue = original;
+                }
+            });
+
+            document.documentElement.lang = language;
+        });
+
+        updateCustomerDisplay();
+        updateOverview();
+    });
+    </script>
 
 </body>
 </html>
